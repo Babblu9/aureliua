@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aurelius Academy of Global Studies — Preparing Scholars for a Global Future</title>
+  <meta name="description" content="A comprehensive pathway to leading universities, academic distinction, and future leadership opportunities. SAT, IELTS, AP, and university admissions coaching in Hyderabad."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .fade-card { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-card.visible { opacity: 1; transform: translateY(0); }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 58 68" xmlns="http://www.w3.org/2000/svg">
+      <text x="29" y="56" font-family="Cormorant Garamond, Georgia, serif" font-size="64" font-weight="600" fill="#FFFFFF" text-anchor="middle">A</text>
+      <circle cx="46" cy="53" r="7" fill="#D4A843"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Aurelius</span>
+      <span class="nav-logo-sub">Academy of Global Studies</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="university.html">University</a></li>
+    <li><a href="global-pathways.html">Global Pathways</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-pill"><span></span>Admissions Open 2026–27</div>
+      <h1 class="hero-title">Preparing Scholars<br/>for a <em>Global Future</em></h1>
+      <p class="hero-sub">A comprehensive pathway to leading universities, academic distinction, and future leadership opportunities. Rooted in excellence, designed for the world.</p>
+      <div class="hero-actions">
+        <a href="programs.html" class="btn btn-gold">Explore Programs</a>
+        <a href="#contact" class="btn btn-outline-white">Get in Touch</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i data-lucide="target"></i></div>
+          <div class="hero-badge-text"><strong>SAT · IELTS · AP</strong>Standardized Test Prep</div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i data-lucide="globe"></i></div>
+          <div class="hero-badge-text"><strong>Global Admissions</strong>US · UK · Europe · Asia</div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i data-lucide="pen-line"></i></div>
+          <div class="hero-badge-text"><strong>Essay & Interview</strong>End-to-end Guidance</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-globe-wrap" aria-hidden="true">
+      <canvas id="heroGlobe" class="globe-canvas"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- 1 · ABOUT — Excellence. Intentional. International. -->
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-card-group">
+          <div class="about-main-card">
+            <div class="about-accent">"</div>
+            <p class="about-card-quote">"The impediment to action advances action. What stands in the way becomes the way."</p>
+            <p class="about-card-attr">— Marcus Aurelius, Meditations</p>
+          </div>
+          <div class="about-float-card">
+            <div class="about-float-num">10<span>+</span></div>
+            <div class="about-float-label">Years of Academic Excellence</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-header left">
+          <span class="section-label">About Aurelius</span>
+          <h2 class="section-title">Excellence. Intentional.<br/>International.</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p>Named after Marcus Aurelius (philosopher, emperor, and one of history's greatest thinkers), Aurelius Academy of Global Studies embodies the belief that rigorous preparation and principled character are the foundation of global success.</p>
+        <p>Located in Madhapur, Hyderabad, we provide students with a structured, mentor-led journey from standardized test preparation to securing admissions at the world's foremost universities.</p>
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="about-feat-icon"><i data-lucide="landmark"></i></div>
+            <div class="about-feat-text"><h4>Expert Faculty</h4><p>Mentors with global academic and professional experience</p></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i data-lucide="graduation-cap"></i></div>
+            <div class="about-feat-text"><h4>Holistic Development</h4><p>Academic, leadership, and personal growth in one program</p></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i data-lucide="globe"></i></div>
+            <div class="about-feat-text"><h4>Global Network</h4><p>Connections across universities in 20+ countries</p></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i data-lucide="chart-bar"></i></div>
+            <div class="about-feat-text"><h4>Proven Results</h4><p>Consistent score improvements and admission records</p></div>
+          </div>
+        </div>
+        <a href="about.html" class="btn btn-outline-navy">Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · GLOBAL OUTLOOK — The World Has Never Been Closer. -->
+<section class="global-outlook">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">A Global Outlook</span>
+      <h2 class="section-title white">The World Has<br/>Never Been Closer.</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="color:rgba(255,255,255,0.6)">Geography no longer decides opportunity. From a single desk in Hyderabad, today's students prepare for, apply to, and join universities on every continent.</p>
+    </div>
+    <div class="outlook-grid">
+      <div class="outlook-card">
+        <div class="outlook-icon"><i data-lucide="globe"></i></div>
+        <h3>Education Without Borders</h3>
+        <p>A student in Madhapur can sit entrance tests recognised from Boston to Singapore, then meet admissions officers an ocean away over a single video call.</p>
+      </div>
+      <div class="outlook-card">
+        <div class="outlook-icon"><i data-lucide="scroll"></i></div>
+        <h3>Credentials That Travel</h3>
+        <p>SAT, IELTS, and AP results open doors at thousands of institutions worldwide, giving Indian students a direct route into global admissions.</p>
+      </div>
+      <div class="outlook-card">
+        <div class="outlook-icon"><i data-lucide="handshake"></i></div>
+        <h3>A Connected Generation</h3>
+        <p>Virtual campus tours, online interviews, and digital applications mean the journey abroad now begins long before the first flight.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · ADVISORY PROCESS — Finding the Right Fit. -->
+<section class="admissions-process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Advisory Approach</span>
+      <h2 class="section-title">Finding the Right Fit.</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">No two students share the same ambitions. Our counsellors build each application around the person behind it, matching strengths and goals to the universities where they will genuinely thrive.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Discover</h4>
+        <p>We begin by understanding the student: academic record, interests, character, and long-term goals.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>Shortlist</h4>
+        <p>We map those strengths against courses worldwide, building a balanced list of ambitious, matched, and secure options.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>Prepare</h4>
+        <p>Test scores, essays, and profile building are aligned to the specific expectations of each shortlisted university.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Apply</h4>
+        <p>We guide every application, deadline, and interview through to the final admission decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · HOLISTIC DEVELOPMENT — Beyond the Bell Curve. -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Holistic Development</span>
+      <h2 class="section-title">Beyond the Bell Curve.</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Leading universities look past marks for the qualities that define a scholar. We develop the character, curiosity, and confidence that set students apart.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="compass"></i></div>
+        <h3>Character &amp; Reflection</h3>
+        <p>Drawing on Stoic principles, we help students build discipline, resilience, and a clear sense of purpose that lasts well beyond any exam hall.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="flag"></i></div>
+        <h3>Leadership &amp; Initiative</h3>
+        <p>Students learn to lead projects, mentor their peers, and take genuine ownership of work that matters to them and to their communities.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="messages-square"></i></div>
+        <h3>Communication &amp; Debate</h3>
+        <p>Structured debate, public speaking, and writing workshops sharpen the way students form an argument and express an idea with clarity.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="microscope"></i></div>
+        <h3>Research &amp; Inquiry</h3>
+        <p>Independent research projects teach students to ask precise questions and pursue the answers with patience and intellectual honesty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · PROGRAMS — The Aurelius Scholar Programs. -->
+<section class="programs">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">The Aurelius Scholar Programs.</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">From international standardized tests to university applications, every program is structured around measurable outcomes and individual progress.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon"><i data-lucide="ruler"></i></div>
+        <span class="program-tag">Test Prep</span>
+        <h3>SAT Preparation</h3>
+        <p>Rigorous, score-focused SAT coaching that builds conceptual strength alongside test-taking strategy.</p>
+        <div class="program-features">
+          <div class="program-feat">Evidence-Based Reading &amp; Writing</div>
+          <div class="program-feat">Advanced Math modules</div>
+          <div class="program-feat">Full-length mock tests</div>
+          <div class="program-feat">Personalized performance tracking</div>
+        </div>
+        <a href="programs.html#sat" class="program-link">View Program →</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"><i data-lucide="messages-square"></i></div>
+        <span class="program-tag">Test Prep</span>
+        <h3>IELTS Coaching</h3>
+        <p>Structured IELTS preparation across all four bands: Listening, Reading, Writing, and Speaking.</p>
+        <div class="program-features">
+          <div class="program-feat">Band 7+ target methodology</div>
+          <div class="program-feat">Speaking lab &amp; feedback</div>
+          <div class="program-feat">Academic &amp; General modules</div>
+          <div class="program-feat">Weekly mock assessments</div>
+        </div>
+        <a href="programs.html#ielts" class="program-link">View Program →</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"><i data-lucide="library"></i></div>
+        <span class="program-tag">Test Prep</span>
+        <h3>AP Courses</h3>
+        <p>College-level Advanced Placement courses that strengthen university applications and earn academic credits.</p>
+        <div class="program-features">
+          <div class="program-feat">Sciences, Mathematics, Humanities</div>
+          <div class="program-feat">Expert subject faculty</div>
+          <div class="program-feat">Exam strategy &amp; practice</div>
+          <div class="program-feat">Score 4 or 5 focus</div>
+        </div>
+        <a href="programs.html#ap" class="program-link">View Program →</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"><i data-lucide="message-circle"></i></div>
+        <span class="program-tag">Language</span>
+        <h3>English Proficiency</h3>
+        <p>Enhance communication fluency and academic English for both everyday and professional contexts.</p>
+        <div class="program-features">
+          <div class="program-feat">Academic writing skills</div>
+          <div class="program-feat">Communication workshops</div>
+          <div class="program-feat">Vocabulary development</div>
+          <div class="program-feat">Presentation training</div>
+        </div>
+        <a href="programs.html#english" class="program-link">View Program →</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"><i data-lucide="brain"></i></div>
+        <span class="program-tag">Enrichment</span>
+        <h3>Academic Enrichment</h3>
+        <p>Beyond the textbook: critical thinking, research methodology, and effective communication skills.</p>
+        <div class="program-features">
+          <div class="program-feat">Research skills &amp; methodology</div>
+          <div class="program-feat">Critical thinking frameworks</div>
+          <div class="program-feat">Debate and argumentation</div>
+          <div class="program-feat">Effective communication</div>
+        </div>
+        <a href="programs.html#enrichment" class="program-link">View Program →</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon"><i data-lucide="trending-up"></i></div>
+        <span class="program-tag">Management</span>
+        <h3>IPMAT Pathways</h3>
+        <p>Integrated preparation for IPMAT and management entrance programs leading to top business schools.</p>
+        <div class="program-features">
+          <div class="program-feat">Quantitative ability</div>
+          <div class="program-feat">Verbal ability &amp; logical reasoning</div>
+          <div class="program-feat">IIM Indore, Rohtak, Ranchi focus</div>
+          <div class="program-feat">Interview preparation</div>
+        </div>
+        <a href="programs.html#ipmat" class="program-link">View Program →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · WHY AURELIUS — The Aurelius Difference. -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">The Aurelius Difference.</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="presentation"></i></div>
+        <h3>Expert Faculty</h3>
+        <p>Mentors with global academic credentials and real-world experience at leading international institutions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="target"></i></div>
+        <h3>Score-Focused Methodology</h3>
+        <p>Each program is built around measurable targets. We teach, track, analyse, and continuously improve.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="globe"></i></div>
+        <h3>Global University Network</h3>
+        <p>Strategic connections across 50+ universities spanning five continents, with pathways others don't offer.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="user"></i></div>
+        <h3>Personalised Approach</h3>
+        <p>Small cohorts and one-on-one mentoring ensure every student gets the attention their ambitions deserve.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="file-pen"></i></div>
+        <h3>End-to-End Admissions</h3>
+        <p>From test prep through essay writing, interview coaching, and final application, we stay with you throughout.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="trophy"></i></div>
+        <h3>Proven Track Record</h3>
+        <p>Hundreds of students have gained admission to their target universities. Results speak for themselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · GLOBAL PATHWAYS — Opportunities Across Continents. -->
+<section class="pathways-preview">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Global Pathways</span>
+      <h2 class="section-title white">Opportunities<br/>Across Continents.</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="color:rgba(255,255,255,0.55)">Whether your ambition is Oxford, MIT, or NUS, our regional experts know exactly what each university looks for.</p>
+    </div>
+    <div class="pathways-grid">
+      <div class="pathway-card">
+        <div class="pathway-region"><i data-lucide="globe"></i> Europe</div>
+        <h3>European Universities</h3>
+        <p>Guidance for prestigious UK institutions and leading universities across Germany, Netherlands, France, and Ireland.</p>
+        <div class="pathway-unis">
+          <span class="pathway-uni-tag">Oxford</span>
+          <span class="pathway-uni-tag">Cambridge</span>
+          <span class="pathway-uni-tag">LSE</span>
+          <span class="pathway-uni-tag">UCL</span>
+          <span class="pathway-uni-tag">Imperial</span>
+          <span class="pathway-uni-tag">TU Munich</span>
+        </div>
+        <a href="global-pathways.html#europe" class="pathway-link">Explore Europe →</a>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-region"><i data-lucide="globe"></i> Americas</div>
+        <h3>North America</h3>
+        <p>Expert admissions guidance for Ivy League, top-ranked US universities, and leading Canadian institutions.</p>
+        <div class="pathway-unis">
+          <span class="pathway-uni-tag">Harvard</span>
+          <span class="pathway-uni-tag">MIT</span>
+          <span class="pathway-uni-tag">Stanford</span>
+          <span class="pathway-uni-tag">Columbia</span>
+          <span class="pathway-uni-tag">UBC</span>
+          <span class="pathway-uni-tag">U of Toronto</span>
+        </div>
+        <a href="global-pathways.html#americas" class="pathway-link">Explore Americas →</a>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-region"><i data-lucide="globe"></i> Asia-Pacific</div>
+        <h3>Asia &amp; Australia</h3>
+        <p>Strategic pathways to Singapore's globally ranked universities, plus Hong Kong, Japan, and Australia's leading institutions.</p>
+        <div class="pathway-unis">
+          <span class="pathway-uni-tag">NUS</span>
+          <span class="pathway-uni-tag">NTU</span>
+          <span class="pathway-uni-tag">HKU</span>
+          <span class="pathway-uni-tag">Melbourne</span>
+          <span class="pathway-uni-tag">ANU</span>
+          <span class="pathway-uni-tag">Waseda</span>
+        </div>
+        <a href="global-pathways.html#asia" class="pathway-link">Explore Asia-Pacific →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · FOUNDER — From the Founder's Desk. -->
+<section class="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-portrait">
+        <div class="founder-photo">
+          <!-- Replace with the founder's photograph: <img src="images/founder.jpg" alt="Founder, Aurelius Academy"/> -->
+          <span>A</span>
+        </div>
+        <div class="founder-badge">
+          <strong>[ Founder Name ]</strong>
+          <span>Founder &amp; Director</span>
+        </div>
+      </div>
+      <div class="founder-message">
+        <div class="section-header left">
+          <span class="section-label">A Personal Note</span>
+          <h2 class="section-title">From the Founder's Desk.</h2>
+          <div class="section-divider"></div>
+        </div>
+        <blockquote class="founder-pullquote">"We do not just prepare students for examinations. We prepare them for the lives those examinations make possible."</blockquote>
+        <p>When we founded Aurelius Academy, we set out to build more than a coaching centre. We wanted a place where rigorous academic preparation and genuine character development belong together, in the same room and in the same lesson.</p>
+        <p>Every year, we watch students arrive uncertain of what they are capable of, and leave with offers from universities they once believed were beyond reach. That change is never an accident. It is the result of honest mentorship, high standards, and a conviction that any student, given the right guidance, can compete with the very best.</p>
+        <p>If you share that conviction, for your child or for yourself, we would be glad to welcome you.</p>
+        <div class="founder-sign">
+          <div class="founder-sign-name">[ Founder Name ]</div>
+          <div class="founder-sign-title">Founder &amp; Director, Aurelius Academy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS CTA -->
+<section class="admissions-cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Admissions Open<br/>2026 – 27</h2>
+        <p>Evening classes available. Limited enrollment. Secure your place today.</p>
+        <div class="cta-badges" style="margin-top:16px">
+          <span class="cta-badge">Evening Classes</span>
+          <span class="cta-badge">Limited Seats</span>
+          <span class="cta-badge">Expert Faculty</span>
+        </div>
+      </div>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-navy">Enquire Now</a>
+        <a href="programs.html" class="btn btn-outline-gold">View Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · CONTACT — A World of Possibility Awaits. -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-header left">
+          <span class="section-label">Contact Us</span>
+          <h2 class="section-title">A World of<br/>Possibility Awaits.</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p>Reach out to our admissions team to learn more about our programs, schedule a consultation, or register for the upcoming academic year.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
+            <div class="contact-detail-text">
+              <h4>Visit Us</h4>
+              <p>1st Floor, Ganesham Square, Road No. 7,<br/>Kakatiya Hills, Madhapur, Hyderabad 500081</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
+            <div class="contact-detail-text">
+              <h4>Call Us</h4>
+              <a href="tel:+919809914444">+91 98099 14444</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="mail"></i></div>
+            <div class="contact-detail-text">
+              <h4>Email Us</h4>
+              <a href="mailto:info@aureliusacademy.in">info@aureliusacademy.in</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="globe"></i></div>
+            <div class="contact-detail-text">
+              <h4>Website</h4>
+              <a href="http://www.aureliusacademy.in">www.aureliusacademy.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Your first name"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Your last name"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Program of Interest</label>
+          <select>
+            <option value="">Select a program</option>
+            <option>SAT Preparation</option>
+            <option>IELTS Coaching</option>
+            <option>AP Courses</option>
+            <option>English Proficiency</option>
+            <option>Academic Enrichment</option>
+            <option>IPMAT Pathways</option>
+            <option>University Admissions</option>
+            <option>Global Pathways</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your goals and any questions you have..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send Enquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="gap:12px;margin-bottom:4px">
+          <svg width="42" height="48" viewBox="0 0 58 68" xmlns="http://www.w3.org/2000/svg">
+            <text x="29" y="56" font-family="Cormorant Garamond,Georgia,serif" font-size="64" font-weight="600" fill="#FFFFFF" text-anchor="middle">A</text>
+            <circle cx="46" cy="53" r="7" fill="#D4A843"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Aurelius</span>
+            <span class="nav-logo-sub">Academy of Global Studies</span>
+          </div>
+        </a>
+        <p>A comprehensive pathway to leading universities, academic distinction, and future leadership opportunities. Rooted in Hyderabad, reaching the world.</p>
+        <div class="footer-social">
+          <a href="#" title="Instagram">in</a>
+          <a href="#" title="Facebook">fb</a>
+          <a href="#" title="LinkedIn">li</a>
+          <a href="#" title="YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#sat">SAT Preparation</a></li>
+          <li><a href="programs.html#ielts">IELTS Coaching</a></li>
+          <li><a href="programs.html#ap">AP Courses</a></li>
+          <li><a href="programs.html#english">English Proficiency</a></li>
+          <li><a href="programs.html#enrichment">Academic Enrichment</a></li>
+          <li><a href="programs.html#ipmat">IPMAT Pathways</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="university.html">University Admissions</a></li>
+          <li><a href="global-pathways.html">Global Pathways</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon"><i data-lucide="map-pin"></i></span>
+          <p>1st Floor, Ganesham Square, Road No. 7, Kakatiya Hills, Madhapur, Hyderabad 500081</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon"><i data-lucide="phone"></i></span>
+          <a href="tel:+919809914444">+91 98099 14444</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon"><i data-lucide="mail"></i></span>
+          <a href="mailto:info@aureliusacademy.in">info@aureliusacademy.in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aurelius Academy of Global Studies. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+<script>
+/* Hero 3D rotating dot-globe — bespoke, no dependencies */
+(function () {
+  var canvas = document.getElementById('heroGlobe');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var GOLD = '212,168,67';
+  var WHITE = '255,255,255';
+  var DEG = Math.PI / 180;
+  var TILT = -23.5 * DEG;
+
+  var W = 0, R = 0, cx = 0, cy = 0;
+  var theta = -1.15;                 // start longitude facing viewer (~India forward)
+  var SPIN = (2 * Math.PI) / 46;     // one revolution / 46s
+
+  function sph(lat, lon) {
+    var a = lat * DEG, b = lon * DEG;
+    return [Math.cos(a) * Math.sin(b), Math.sin(a), Math.cos(a) * Math.cos(b)];
+  }
+
+  // surface dots — fibonacci sphere
+  var dots = [], N = 820, GA = Math.PI * (3 - Math.sqrt(5));
+  for (var i = 0; i < N; i++) {
+    var y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * GA;
+    dots.push([Math.cos(a) * r, y, Math.sin(a) * r]);
+  }
+
+  // graticule
+  var lines = [];
+  for (var lon = 0; lon < 360; lon += 30) { var L = []; for (var lt = -80; lt <= 80; lt += 4) L.push(sph(lt, lon)); lines.push(L); }
+  for (var lat = -60; lat <= 60; lat += 30) { var P = []; for (var ln = 0; ln <= 360; ln += 6) P.push(sph(lat, ln)); lines.push(P); }
+
+  var cities = [
+    { n: 'Hyderabad', lat: 17.4, lon: 78.5, home: true },
+    { n: 'London', lat: 51.5, lon: -0.1 },
+    { n: 'Boston', lat: 42.4, lon: -71.1 },
+    { n: 'SF', lat: 37.8, lon: -122.4 },
+    { n: 'Toronto', lat: 43.7, lon: -79.4 },
+    { n: 'Singapore', lat: 1.35, lon: 103.8 },
+    { n: 'Sydney', lat: -33.9, lon: 151.2 },
+    { n: 'Munich', lat: 48.1, lon: 11.6 }
+  ].map(function (c) { c.v = sph(c.lat, c.lon); return c; });
+  var home = cities[0];
+
+  function greatCircle(a, b, steps) {
+    var d = Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]));
+    var w = Math.acos(d), s = Math.sin(w) || 1e-6, out = [];
+    for (var i = 0; i <= steps; i++) {
+      var t = i / steps, k1 = Math.sin((1 - t) * w) / s, k2 = Math.sin(t * w) / s;
+      var x = k1 * a[0] + k2 * b[0], y = k1 * a[1] + k2 * b[1], z = k1 * a[2] + k2 * b[2];
+      var m = Math.hypot(x, y, z) || 1, lift = 1 + 0.12 * Math.sin(Math.PI * t);
+      out.push([x / m * lift, y / m * lift, z / m * lift]);
+    }
+    return out;
+  }
+  var arcs = cities.slice(1, 7).map(function (c, i) {
+    return { pts: greatCircle(home.v, c.v, 50), off: i / 6 };
+  });
+
+  function rot(v) {
+    var ct = Math.cos(theta), st = Math.sin(theta);
+    var x = v[0] * ct + v[2] * st, z = -v[0] * st + v[2] * ct, y = v[1];
+    var ca = Math.cos(TILT), sa = Math.sin(TILT);
+    return [x, y * ca - z * sa, y * sa + z * ca];   // z>0 => front hemisphere
+  }
+  function proj(v) { var p = rot(v); return [cx + p[0] * R, cy - p[1] * R, p[2]]; }
+
+  function resize() {
+    var size = canvas.getBoundingClientRect().width;
+    if (!size) return false;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = size; canvas.width = Math.round(size * dpr); canvas.height = Math.round(size * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cx = cy = size / 2; R = size * 0.42;
+    return true;
+  }
+
+  function drawDots(front) {
+    for (var i = 0; i < dots.length; i++) {
+      var p = rot(dots[i]); if ((p[2] >= 0) !== front) continue;
+      var alpha = front ? 0.06 + 0.20 * p[2] : 0.05 * (1 + p[2]);
+      if (alpha <= 0.012) continue;
+      ctx.beginPath();
+      ctx.arc(cx + p[0] * R, cy - p[1] * R, front ? 1.15 : 0.9, 0, 7);
+      ctx.fillStyle = 'rgba(' + WHITE + ',' + alpha.toFixed(3) + ')';
+      ctx.fill();
+    }
+  }
+  function drawGraticule(front) {
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = front ? 'rgba(' + WHITE + ',0.085)' : 'rgba(' + WHITE + ',0.035)';
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i], started = false; ctx.beginPath();
+      for (var j = 0; j < line.length; j++) {
+        var p = rot(line[j]); if ((p[2] >= 0) !== front) { started = false; continue; }
+        var sx = cx + p[0] * R, sy = cy - p[1] * R;
+        if (!started) { ctx.moveTo(sx, sy); started = true; } else ctx.lineTo(sx, sy);
+      }
+      ctx.stroke();
+    }
+  }
+  function drawArc(arc) {
+    for (var i = 0; i < arc.pts.length - 1; i++) {
+      var p1 = proj(arc.pts[i]), p2 = proj(arc.pts[i + 1]), dep = (p1[2] + p2[2]) / 2;
+      ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]);
+      ctx.lineWidth = dep >= 0 ? 1.5 : 1;
+      ctx.strokeStyle = 'rgba(' + GOLD + ',' + (dep >= 0 ? 0.5 : 0.12) + ')';
+      ctx.stroke();
+    }
+    var t = ((now() / 2600) + arc.off) % 1, idx = Math.floor(t * (arc.pts.length - 1)), pp = proj(arc.pts[idx]);
+    if (pp[2] >= 0) {
+      ctx.beginPath(); ctx.arc(pp[0], pp[1], 6, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',0.18)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(pp[0], pp[1], 2.4, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',0.95)'; ctx.fill();
+    }
+  }
+  function drawHub(c) {
+    var p = proj(c.v), front = p[2] >= 0, base = front ? 1 : 0.32;
+    if (c.home) {
+      var pulse = 0.5 + 0.5 * Math.sin(now() / 720);
+      ctx.beginPath(); ctx.arc(p[0], p[1], 11 + 7 * pulse, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.10 * base) + ')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(p[0], p[1], 6.5, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.24 * base) + ')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(p[0], p[1], 3.6, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + base + ')'; ctx.fill();
+    } else {
+      ctx.beginPath(); ctx.arc(p[0], p[1], front ? 5 : 4, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.16 * base) + ')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(p[0], p[1], front ? 2.5 : 2, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.95 * base) + ')'; ctx.fill();
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, W);
+    var g = ctx.createRadialGradient(cx - R * 0.36, cy - R * 0.42, R * 0.1, cx, cy, R * 1.05);
+    g.addColorStop(0, 'rgba(56,74,152,0.45)'); g.addColorStop(0.55, 'rgba(20,30,74,0.34)'); g.addColorStop(1, 'rgba(8,12,34,0.55)');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fillStyle = g; ctx.fill();
+
+    drawGraticule(false); drawDots(false);
+    drawGraticule(true); drawDots(true);
+    for (var i = 0; i < arcs.length; i++) drawArc(arcs[i]);
+    for (var k = 0; k < cities.length; k++) drawHub(cities[k]);
+
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.lineWidth = 1.1; ctx.strokeStyle = 'rgba(' + GOLD + ',0.22)'; ctx.stroke();
+    var rim = ctx.createLinearGradient(cx - R, cy - R, cx + R * 0.4, cy + R * 0.4);
+    rim.addColorStop(0, 'rgba(' + GOLD + ',0.55)'); rim.addColorStop(0.45, 'rgba(' + GOLD + ',0)');
+    ctx.beginPath(); ctx.arc(cx, cy, R, Math.PI * 0.92, Math.PI * 1.62); ctx.lineWidth = 1.6; ctx.strokeStyle = rim; ctx.stroke();
+  }
+
+  function now() { return (window.performance && performance.now) ? performance.now() : Date.now(); }
+
+  var running = false, last = 0, visible = true, inview = true;
+  function frame(t) {
+    if (!running) return;
+    var dt = last ? (t - last) / 1000 : 0; last = t;
+    if (!reduce) theta += SPIN * Math.min(dt, 0.05);
+    draw();
+    if (reduce) { running = false; return; }
+    requestAnimationFrame(frame);
+  }
+  function start() { if (running || !visible || !inview) return; if (!resize()) return; running = true; last = 0; requestAnimationFrame(frame); }
+  function stop() { running = false; }
+
+  if (resize()) draw();
+  document.addEventListener('visibilitychange', function () { visible = !document.hidden; visible ? start() : stop(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { inview = e[0].isIntersecting; inview ? start() : stop(); }, { threshold: 0.05 }).observe(canvas);
+  }
+  if ('ResizeObserver' in window) {
+    var rt; new ResizeObserver(function () {
+      clearTimeout(rt); rt = setTimeout(function () { stop(); if (resize()) { draw(); start(); } }, 120);
+    }).observe(canvas);
+  }
+  start();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Aurelius Academy of Global Studies</title>
+  <meta name="description" content="Named after Marcus Aurelius, Aurelius Academy prepares students in Hyderabad for leading global universities through rigorous academic and character development."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .fade-card { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-card.visible { opacity: 1; transform: translateY(0); }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .team-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; text-align: center; transition: all var(--ease); }
+    .team-card:hover { border-color: rgba(184,137,42,0.3); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .team-avatar { width: 72px; height: 72px; background: var(--navy); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold-light); }
+    .team-card h3 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .team-card .role { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .team-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.7; }
+    .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+    .value-card { padding: 36px 32px; border: 1px solid var(--border); border-radius: var(--radius); transition: all var(--ease); }
+    .value-card:hover { border-color: rgba(184,137,42,0.3); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .value-num { font-size: 2.4rem; color: var(--gold); opacity: 0.85; line-height: 1; margin-bottom: 14px; }
+    .value-card h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+    .value-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; }
+    @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 58 68" xmlns="http://www.w3.org/2000/svg">
+      <text x="29" y="56" font-family="Cormorant Garamond, Georgia, serif" font-size="64" font-weight="600" fill="#FFFFFF" text-anchor="middle">A</text>
+      <circle cx="46" cy="53" r="7" fill="#D4A843"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Aurelius</span>
+      <span class="nav-logo-sub">Academy of Global Studies</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="university.html">University</a></li>
+    <li><a href="global-pathways.html">Global Pathways</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="page-hero-label">Our Story</span>
+  <h1 class="page-hero-title">Named After a Philosopher.<br/>Built for the Future.</h1>
+  <p class="page-hero-sub">Aurelius Academy traces its identity to one of history's most enduring thinkers, and to the conviction that great preparation shapes great lives.</p>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-grid">
+      <div>
+        <div class="section-header left">
+          <span class="section-label">Our Philosophy</span>
+          <h2 class="section-title">The Aurelius<br/>Principle</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="philosophy-quote">
+          <blockquote>"Waste no more time arguing what a good man should be. Be one."</blockquote>
+          <cite>Marcus Aurelius, Meditations</cite>
+        </div>
+        <div class="philosophy-text">
+          <p>Marcus Aurelius ruled the Roman Empire while writing some of history's most important philosophical texts. He believed that discipline, reason, and continuous self-improvement were not just virtues; they were obligations. We carry that spirit into every classroom.</p>
+          <p>At Aurelius Academy, we don't separate academic preparation from character development. The student who earns a 1550 on the SAT and earns it through consistent effort, intellectual honesty, and resilience is the student who will thrive at any university on earth.</p>
+        </div>
+      </div>
+      <div class="mvv-grid">
+        <div class="mvv-card">
+          <h4>Mission</h4>
+          <p>To prepare students from Hyderabad for admission to the world's leading universities through rigorous academic coaching, personal mentorship, and strategic admissions guidance.</p>
+        </div>
+        <div class="mvv-card">
+          <h4>Vision</h4>
+          <p>A generation of scholars from India who compete confidently on the global stage, equipped with the knowledge, language, and character to lead in any field.</p>
+        </div>
+        <div class="mvv-card">
+          <h4>Approach</h4>
+          <p>Small cohorts. Individual attention. Measurable targets. Every student receives a personalised learning plan aligned to their university ambitions and academic strengths.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Stand For</span>
+      <h2 class="section-title">Four Principles That<br/>Guide Everything We Do</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num"><i data-lucide="landmark"></i></div>
+        <h3>Intellectual Rigour</h3>
+        <p>We hold students to high standards because high standards produce high results. Every lesson, every mock test, every essay review is designed to push students toward their genuine best, not a comfortable approximation of it.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num"><i data-lucide="handshake"></i></div>
+        <h3>Honest Mentorship</h3>
+        <p>We tell students what they need to hear, not just what they want to hear. Our mentors give direct, actionable feedback on scores, essays, and interview performance, because honest feedback is the only kind that helps.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num"><i data-lucide="globe"></i></div>
+        <h3>Global Perspective</h3>
+        <p>Our programs are built around the realities of international admissions. We understand what Oxford wants from a personal statement, what MIT looks for beyond grades, and how NUS evaluates leadership. That specificity matters.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num"><i data-lucide="trending-up"></i></div>
+        <h3>Long-Term Thinking</h3>
+        <p>We prepare students not just to gain admission but to succeed once they arrive. The critical thinking, research skills, and communication abilities we develop serve students long after their first acceptance letter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Faculty</span>
+      <h2 class="section-title">Mentors With<br/>Real-World Experience</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Our faculty have studied and worked at leading institutions across the US, UK, and Asia. They bring that experience directly into the classroom.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">A</div>
+        <h3>SAT & AP Faculty</h3>
+        <div class="role">Mathematics & Sciences</div>
+        <p>Specialists in quantitative reasoning, calculus, and AP sciences, with experience preparing students for scores in the 99th percentile.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">L</div>
+        <h3>IELTS & English Faculty</h3>
+        <div class="role">Language & Communication</div>
+        <p>Certified language trainers focused on Academic English, IELTS band 7+, and the writing skills that distinguish strong university applications.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">U</div>
+        <h3>Admissions Counsellors</h3>
+        <div class="role">University Guidance</div>
+        <p>Former admissions readers and application strategists who have guided students into programmes at Oxford, LSE, NUS, and top US universities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-header left">
+          <span class="section-label">Find Us</span>
+          <h2 class="section-title">Located in the Heart<br/>of Madhapur</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p style="color:var(--text-mid);line-height:1.85;margin-bottom:24px">Our campus is situated in Ganesham Square, Madhapur, one of Hyderabad's most accessible educational and professional hubs. Evening classes make it practical for school and college students alike.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
+            <div class="contact-detail-text">
+              <h4>Address</h4>
+              <p>1st Floor, Ganesham Square, Road No. 7,<br/>Kakatiya Hills, Madhapur, Hyderabad 500081</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="clock"></i></div>
+            <div class="contact-detail-text">
+              <h4>Class Timings</h4>
+              <p>Evening batches available<br/>Monday through Saturday</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
+            <div class="contact-detail-text">
+              <h4>Admissions</h4>
+              <a href="tel:+919809914444" style="color:var(--text-mid)">+91 98099 14444</a>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:32px">
+          <a href="index.html#contact" class="btn btn-gold">Book a Consultation</a>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--light-gray);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)">
+          <div style="text-align:center;color:var(--text-light)">
+            <div style="font-size:3rem;margin-bottom:12px"><i data-lucide="map-pin"></i></div>
+            <p style="font-size:0.875rem">Ganesham Square, Madhapur<br/>Hyderabad 500081</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="gap:12px;margin-bottom:4px">
+          <svg width="42" height="48" viewBox="0 0 58 68" xmlns="http://www.w3.org/2000/svg">
+            <text x="29" y="56" font-family="Cormorant Garamond,Georgia,serif" font-size="64" font-weight="600" fill="#FFFFFF" text-anchor="middle">A</text>
+            <circle cx="46" cy="53" r="7" fill="#D4A843"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Aurelius</span>
+            <span class="nav-logo-sub">Academy of Global Studies</span>
+          </div>
+        </a>
+        <p>A comprehensive pathway to leading universities, academic distinction, and future leadership opportunities. Rooted in Hyderabad, reaching the world.</p>
+        <div class="footer-social">
+          <a href="#" title="Instagram">in</a>
+          <a href="#" title="Facebook">fb</a>
+          <a href="#" title="LinkedIn">li</a>
+          <a href="#" title="YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#sat">SAT Preparation</a></li>
+          <li><a href="programs.html#ielts">IELTS Coaching</a></li>
+          <li><a href="programs.html#ap">AP Courses</a></li>
+          <li><a href="programs.html#english">English Proficiency</a></li>
+          <li><a href="programs.html#enrichment">Academic Enrichment</a></li>
+          <li><a href="programs.html#ipmat">IPMAT Pathways</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="university.html">University Admissions</a></li>
+          <li><a href="global-pathways.html">Global Pathways</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon"><i data-lucide="map-pin"></i></span>
+          <p>1st Floor, Ganesham Square, Road No. 7, Kakatiya Hills, Madhapur, Hyderabad 500081</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon"><i data-lucide="phone"></i></span>
+          <a href="tel:+919809914444">+91 98099 14444</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon"><i data-lucide="mail"></i></span>
+          <a href="mailto:info@aureliusacademy.in">info@aureliusacademy.in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aurelius Academy of Global Studies. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
