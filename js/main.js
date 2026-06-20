@@ -86,3 +86,27 @@ document.querySelectorAll('.program-card, .pathway-card, .why-card, .uni-card, .
 document.querySelectorAll('a[href^="tel"], a[href^="mailto"]').forEach(a => {
   a.addEventListener('click', e => e.stopPropagation());
 });
+
+// Contact form -> prefilled email (mailto). The form's action="mailto:" is the no-JS fallback.
+const enquiryForm = document.getElementById('enquiryForm');
+if (enquiryForm) {
+  enquiryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = (name) => {
+      const field = enquiryForm.querySelector('[name="' + name + '"]');
+      return field ? field.value.trim() : '';
+    };
+    const fullName = (val('First Name') + ' ' + val('Last Name')).trim();
+    const program = val('Program of Interest');
+    const subject = 'Enquiry' + (program ? ' — ' + program : '') + (fullName ? ' from ' + fullName : '');
+    const body =
+      'Name: ' + fullName + '\n' +
+      'Email: ' + val('Email') + '\n' +
+      'Phone: ' + val('Phone') + '\n' +
+      'Program of Interest: ' + program + '\n\n' +
+      'Message:\n' + val('Message') + '\n';
+    window.location.href = 'mailto:info@aureliusacademy.in'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+  });
+}
