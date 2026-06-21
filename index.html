@@ -642,175 +642,287 @@
 <script src="https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
 <script>
-/* Hero 3D rotating dot-globe — bespoke, no dependencies */
+/* Hero 3D globe — world map, all destinations, arc arrows */
 (function () {
   var canvas = document.getElementById('heroGlobe');
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext('2d');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var GOLD = '212,168,67';
-  var WHITE = '255,255,255';
+  // ── constants ──────────────────────────────────────────────────────────────
   var DEG = Math.PI / 180;
-  var TILT = -23.5 * DEG;
+  var TILT_CA = Math.cos(-23.5 * DEG), TILT_SA = Math.sin(-23.5 * DEG);
+  var GOLD = '212,168,67', G2 = '184,137,42', WH = '255,255,255';
+  var canW = 0, R = 0, cx = 0, cy = 0;
+  var theta = -1.15, SPIN = (2 * Math.PI) / 52;
+  var cT = Math.cos(theta), sT = Math.sin(theta); // cached per frame
 
-  var W = 0, R = 0, cx = 0, cy = 0;
-  var theta = -1.15;                 // start longitude facing viewer (~India forward)
-  var SPIN = (2 * Math.PI) / 46;     // one revolution / 46s
-
-  function sph(lat, lon) {
-    var a = lat * DEG, b = lon * DEG;
-    return [Math.cos(a) * Math.sin(b), Math.sin(a), Math.cos(a) * Math.cos(b)];
+  // ── geo helpers ────────────────────────────────────────────────────────────
+  function ll2v(lat, lon) {
+    var p = lat * DEG, l = lon * DEG;
+    return [Math.cos(p) * Math.sin(l), Math.sin(p), Math.cos(p) * Math.cos(l)];
+  }
+  function rot(v) {
+    var x = v[0]*cT + v[2]*sT, z = -v[0]*sT + v[2]*cT, y = v[1];
+    return [x, y*TILT_CA - z*TILT_SA, y*TILT_SA + z*TILT_CA];
   }
 
-  // surface dots — fibonacci sphere
-  var dots = [], N = 820, GA = Math.PI * (3 - Math.sqrt(5));
-  for (var i = 0; i < N; i++) {
-    var y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * GA;
-    dots.push([Math.cos(a) * r, y, Math.sin(a) * r]);
+  // ── graticule ──────────────────────────────────────────────────────────────
+  var grat = [];
+  for (var gln = 0; gln < 360; gln += 30) { var gL = []; for (var glt = -80; glt <= 80; glt += 4) gL.push(ll2v(glt, gln)); grat.push(gL); }
+  for (var gla = -60; gla <= 60; gla += 30) { var gP = []; for (var glo = 0; glo <= 360; glo += 4) gP.push(ll2v(gla, glo)); grat.push(gP); }
+
+  // ── surface dots (fibonacci sphere) ───────────────────────────────────────
+  var sdots = [], N = 820, GA = Math.PI * (3 - Math.sqrt(5));
+  for (var si = 0; si < N; si++) {
+    var sy = 1 - (si/(N-1))*2, sr = Math.sqrt(Math.max(0, 1-sy*sy)), sa = si*GA;
+    sdots.push([Math.cos(sa)*sr, sy, Math.sin(sa)*sr]);
   }
 
-  // graticule
-  var lines = [];
-  for (var lon = 0; lon < 360; lon += 30) { var L = []; for (var lt = -80; lt <= 80; lt += 4) L.push(sph(lt, lon)); lines.push(L); }
-  for (var lat = -60; lat <= 60; lat += 30) { var P = []; for (var ln = 0; ln <= 360; ln += 6) P.push(sph(lat, ln)); lines.push(P); }
+  // ── destinations — every university on the site ────────────────────────────
+  var HOME = { lat: 17.4, lon: 78.5, name: 'Hyderabad', home: true };
+  var DESTS = [
+    { lat: 51.75, lon: -1.26,  name: 'Oxford',     label: 'Oxford · Cambridge' },
+    { lat: 51.50, lon: -0.13,  name: 'London',      label: 'LSE · UCL · Imperial\nKing\'s · Edinburgh · Warwick' },
+    { lat: 53.33, lon: -6.25,  name: 'Dublin',      label: 'Trinity College Dublin' },
+    { lat: 48.14, lon: 11.58,  name: 'Munich',      label: 'TU Munich' },
+    { lat: 52.01, lon:  4.36,  name: 'Delft',       label: 'TU Delft' },
+    { lat: 48.85, lon:  2.35,  name: 'Paris',       label: 'Sciences Po' },
+    { lat: 42.36, lon:-71.06,  name: 'Boston',      label: 'Harvard · MIT' },
+    { lat: 40.71, lon:-74.01,  name: 'New York',    label: 'Columbia · NYU' },
+    { lat: 40.44, lon:-80.01,  name: 'Pittsburgh',  label: 'Carnegie Mellon' },
+    { lat: 41.31, lon:-72.92,  name: 'New Haven',   label: 'Yale' },
+    { lat: 37.43, lon:-122.17, name: 'Stanford',    label: 'Stanford' },
+    { lat: 37.87, lon:-122.26, name: 'Berkeley',    label: 'UC Berkeley' },
+    { lat: 43.65, lon:-79.38,  name: 'Toronto',     label: 'University of Toronto' },
+    { lat: 49.25, lon:-123.12, name: 'Vancouver',   label: 'UBC' },
+    { lat: 45.50, lon:-73.57,  name: 'Montréal',    label: 'McGill' },
+    { lat:  1.35, lon:103.82,  name: 'Singapore',   label: 'NUS · NTU' },
+    { lat: 22.32, lon:114.17,  name: 'Hong Kong',   label: 'HKU · HKUST' },
+    { lat: 35.69, lon:139.69,  name: 'Tokyo',       label: 'Waseda' },
+    { lat: 36.35, lon:127.38,  name: 'Daejeon',     label: 'KAIST' },
+    { lat:-37.81, lon:144.96,  name: 'Melbourne',   label: 'Univ. of Melbourne' },
+    { lat:-35.28, lon:149.13,  name: 'Canberra',    label: 'ANU' },
+    { lat:-33.87, lon:151.21,  name: 'Sydney',      label: 'Univ. of Sydney' }
+  ];
+  HOME.v = ll2v(HOME.lat, HOME.lon);
+  DESTS.forEach(function(d){ d.v = ll2v(d.lat, d.lon); });
 
-  var cities = [
-    { n: 'Hyderabad', lat: 17.4, lon: 78.5, home: true },
-    { n: 'London', lat: 51.5, lon: -0.1 },
-    { n: 'Boston', lat: 42.4, lon: -71.1 },
-    { n: 'SF', lat: 37.8, lon: -122.4 },
-    { n: 'Toronto', lat: 43.7, lon: -79.4 },
-    { n: 'Singapore', lat: 1.35, lon: 103.8 },
-    { n: 'Sydney', lat: -33.9, lon: 151.2 },
-    { n: 'Munich', lat: 48.1, lon: 11.6 }
-  ].map(function (c) { c.v = sph(c.lat, c.lon); return c; });
-  var home = cities[0];
-
-  function greatCircle(a, b, steps) {
-    var d = Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]));
-    var w = Math.acos(d), s = Math.sin(w) || 1e-6, out = [];
+  // ── great-circle arcs with lift ────────────────────────────────────────────
+  function gcArc(a, b, steps) {
+    var d = Math.max(-1, Math.min(1, a[0]*b[0]+a[1]*b[1]+a[2]*b[2]));
+    var om = Math.acos(d), so = Math.sin(om)||1e-6, pts = [];
     for (var i = 0; i <= steps; i++) {
-      var t = i / steps, k1 = Math.sin((1 - t) * w) / s, k2 = Math.sin(t * w) / s;
-      var x = k1 * a[0] + k2 * b[0], y = k1 * a[1] + k2 * b[1], z = k1 * a[2] + k2 * b[2];
-      var m = Math.hypot(x, y, z) || 1, lift = 1 + 0.12 * Math.sin(Math.PI * t);
-      out.push([x / m * lift, y / m * lift, z / m * lift]);
+      var t = i/steps, k1 = Math.sin((1-t)*om)/so, k2 = Math.sin(t*om)/so;
+      var x = k1*a[0]+k2*b[0], y2 = k1*a[1]+k2*b[1], z = k1*a[2]+k2*b[2];
+      var m = 1 + 0.13 * Math.sin(Math.PI*t), len = Math.hypot(x,y2,z)||1;
+      pts.push([x/len*m, y2/len*m, z/len*m]);
     }
-    return out;
+    return pts;
   }
-  var arcs = cities.slice(1, 7).map(function (c, i) {
-    return { pts: greatCircle(home.v, c.v, 50), off: i / 6 };
+  var arcs = DESTS.map(function(d, i){
+    return { pts: gcArc(HOME.v, d.v, 64), dest: d, off: i/DESTS.length };
   });
 
-  function rot(v) {
-    var ct = Math.cos(theta), st = Math.sin(theta);
-    var x = v[0] * ct + v[2] * st, z = -v[0] * st + v[2] * ct, y = v[1];
-    var ca = Math.cos(TILT), sa = Math.sin(TILT);
-    return [x, y * ca - z * sa, y * sa + z * ca];   // z>0 => front hemisphere
-  }
-  function proj(v) { var p = rot(v); return [cx + p[0] * R, cy - p[1] * R, p[2]]; }
+  // ── world map (loaded async from CDN) ─────────────────────────────────────
+  var landRings = [], countryRings = [], mapReady = false;
 
+  function collectRings(coords, out) {
+    coords.forEach(function(ring){
+      var verts = ring.map(function(c){ return ll2v(c[1], c[0]); });
+      if (verts.length > 2) out.push(verts);
+    });
+  }
+  function walkGeo(geo, out) {
+    if (!geo) return;
+    if (geo.type === 'FeatureCollection') { geo.features.forEach(function(f){ walkGeo(f, out); }); }
+    else if (geo.type === 'Feature')       { walkGeo(geo.geometry, out); }
+    else if (geo.type === 'Polygon')       { collectRings(geo.coordinates, out); }
+    else if (geo.type === 'MultiPolygon')  { geo.coordinates.forEach(function(p){ collectRings(p, out); }); }
+    else if (geo.type === 'GeometryCollection') { geo.geometries.forEach(function(g){ walkGeo(g, out); }); }
+  }
+
+  function onTopo(topo) {
+    if (!window.topojson) return;
+    walkGeo(topojson.feature(topo, topo.objects.land),      landRings);
+    walkGeo(topojson.feature(topo, topo.objects.countries), countryRings);
+    mapReady = true;
+  }
+
+  if (!reduce) {
+    var ts = document.createElement('script');
+    ts.src = 'https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js';
+    ts.onload = function(){
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+        .then(function(r){ return r.json(); }).then(onTopo).catch(function(){});
+    };
+    document.head.appendChild(ts);
+  }
+
+  // ── resize ─────────────────────────────────────────────────────────────────
   function resize() {
     var size = canvas.getBoundingClientRect().width;
     if (!size) return false;
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = size; canvas.width = Math.round(size * dpr); canvas.height = Math.round(size * dpr);
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    canW = size; canvas.width = Math.round(size*dpr); canvas.height = Math.round(size*dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cx = cy = size / 2; R = size * 0.42;
+    cx = cy = size/2; R = size*0.42;
     return true;
   }
 
-  function drawDots(front) {
-    for (var i = 0; i < dots.length; i++) {
-      var p = rot(dots[i]); if ((p[2] >= 0) !== front) continue;
-      var alpha = front ? 0.06 + 0.20 * p[2] : 0.05 * (1 + p[2]);
-      if (alpha <= 0.012) continue;
-      ctx.beginPath();
-      ctx.arc(cx + p[0] * R, cy - p[1] * R, front ? 1.15 : 0.9, 0, 7);
-      ctx.fillStyle = 'rgba(' + WHITE + ',' + alpha.toFixed(3) + ')';
-      ctx.fill();
+  // ── draw helpers ───────────────────────────────────────────────────────────
+  function traceRings(rings, zmin) {
+    for (var i = 0; i < rings.length; i++) {
+      var ring = rings[i], mv = false;
+      for (var j = 0; j < ring.length; j++) {
+        var p = rot(ring[j]), x = cx+p[0]*R, y = cy-p[1]*R;
+        if (p[2] > zmin) { if (!mv){ ctx.moveTo(x,y); mv=true; } else ctx.lineTo(x,y); }
+        else mv = false;
+      }
     }
   }
-  function drawGraticule(front) {
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = front ? 'rgba(' + WHITE + ',0.085)' : 'rgba(' + WHITE + ',0.035)';
-    for (var i = 0; i < lines.length; i++) {
-      var line = lines[i], started = false; ctx.beginPath();
+
+  function drawMap() {
+    if (!mapReady) return;
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, R*0.999, 0, Math.PI*2); ctx.clip();
+    // land fill
+    ctx.beginPath(); traceRings(landRings, -0.04);
+    ctx.fillStyle = 'rgba(66,92,175,0.52)'; ctx.fill('evenodd');
+    // country outlines (borders + coastlines)
+    ctx.beginPath(); traceRings(countryRings, 0.0);
+    ctx.lineWidth = 0.55; ctx.strokeStyle = 'rgba('+G2+',0.42)'; ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawGrat(front) {
+    ctx.lineWidth = 0.7;
+    ctx.strokeStyle = front ? 'rgba('+WH+',0.07)' : 'rgba('+WH+',0.03)';
+    for (var i = 0; i < grat.length; i++) {
+      var line = grat[i], mv = false; ctx.beginPath();
       for (var j = 0; j < line.length; j++) {
-        var p = rot(line[j]); if ((p[2] >= 0) !== front) { started = false; continue; }
-        var sx = cx + p[0] * R, sy = cy - p[1] * R;
-        if (!started) { ctx.moveTo(sx, sy); started = true; } else ctx.lineTo(sx, sy);
+        var p = rot(line[j]); if ((p[2]>=0)!==front){ mv=false; continue; }
+        var x=cx+p[0]*R, y=cy-p[1]*R;
+        if (!mv){ ctx.moveTo(x,y); mv=true; } else ctx.lineTo(x,y);
       }
       ctx.stroke();
     }
   }
-  function drawArc(arc) {
-    for (var i = 0; i < arc.pts.length - 1; i++) {
-      var p1 = proj(arc.pts[i]), p2 = proj(arc.pts[i + 1]), dep = (p1[2] + p2[2]) / 2;
-      ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]);
-      ctx.lineWidth = dep >= 0 ? 1.5 : 1;
-      ctx.strokeStyle = 'rgba(' + GOLD + ',' + (dep >= 0 ? 0.5 : 0.12) + ')';
-      ctx.stroke();
-    }
-    var t = ((now() / 2600) + arc.off) % 1, idx = Math.floor(t * (arc.pts.length - 1)), pp = proj(arc.pts[idx]);
-    if (pp[2] >= 0) {
-      ctx.beginPath(); ctx.arc(pp[0], pp[1], 6, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',0.18)'; ctx.fill();
-      ctx.beginPath(); ctx.arc(pp[0], pp[1], 2.4, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',0.95)'; ctx.fill();
+
+  function drawDots(front) {
+    for (var i = 0; i < sdots.length; i++) {
+      var p = rot(sdots[i]); if ((p[2]>=0)!==front) continue;
+      var a = front ? 0.05+0.12*p[2] : 0.04*(1+p[2]);
+      if (a < 0.01) continue;
+      ctx.beginPath(); ctx.arc(cx+p[0]*R, cy-p[1]*R, front?1.05:0.8, 0, 7);
+      ctx.fillStyle='rgba('+WH+','+a.toFixed(3)+')'; ctx.fill();
     }
   }
-  function drawHub(c) {
-    var p = proj(c.v), front = p[2] >= 0, base = front ? 1 : 0.32;
+
+  function drawArc(arc, t) {
+    var pts = arc.pts;
+    // faint full-path line
+    ctx.beginPath();
+    var mv = false;
+    for (var i = 0; i < pts.length; i++) {
+      var p = rot(pts[i]), x=cx+p[0]*R, y=cy-p[1]*R;
+      if (p[2]>=0){ if(!mv){ctx.moveTo(x,y);mv=true;} else ctx.lineTo(x,y); } else mv=false;
+    }
+    ctx.lineWidth=1.1; ctx.strokeStyle='rgba('+G2+',0.24)'; ctx.stroke();
+
+    // arrowhead at destination
+    var pe = rot(pts[pts.length-1]);
+    if (pe[2] >= 0) {
+      var pe2 = rot(pts[pts.length-5]);
+      var tx=cx+pe[0]*R, ty=cy-pe[1]*R;
+      var dx=tx-(cx+pe2[0]*R), dy=ty-(cy-pe2[1]*R);
+      var ang=Math.atan2(dy,dx), sz=Math.max(4, R*0.026);
+      ctx.save(); ctx.translate(tx,ty); ctx.rotate(ang);
+      ctx.beginPath(); ctx.moveTo(sz,0); ctx.lineTo(-sz*0.7,-sz*0.44); ctx.lineTo(-sz*0.7,sz*0.44); ctx.closePath();
+      ctx.fillStyle='rgba('+GOLD+',0.82)'; ctx.fill();
+      ctx.restore();
+    }
+
+    // traveling dot
+    var prog=((t/3600)+arc.off)%1, idx=Math.min(Math.floor(prog*(pts.length-1)), pts.length-2);
+    var pp=rot(pts[idx]);
+    if (pp[2]>=0) {
+      var px=cx+pp[0]*R, py=cy-pp[1]*R;
+      ctx.beginPath(); ctx.arc(px,py,6,0,7); ctx.fillStyle='rgba('+GOLD+',0.13)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(px,py,2.6,0,7); ctx.fillStyle='rgba('+GOLD+',0.96)'; ctx.fill();
+    }
+  }
+
+  function drawHub(c, t) {
+    var p=rot(c.v), front=p[2]>=0, px=cx+p[0]*R, py=cy-p[1]*R, base=front?1:0.28;
+    if (!front && !c.home) return;
     if (c.home) {
-      var pulse = 0.5 + 0.5 * Math.sin(now() / 720);
-      ctx.beginPath(); ctx.arc(p[0], p[1], 11 + 7 * pulse, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.10 * base) + ')'; ctx.fill();
-      ctx.beginPath(); ctx.arc(p[0], p[1], 6.5, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.24 * base) + ')'; ctx.fill();
-      ctx.beginPath(); ctx.arc(p[0], p[1], 3.6, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + base + ')'; ctx.fill();
+      var pulse=0.5+0.5*Math.sin(t/720);
+      ctx.beginPath(); ctx.arc(px,py,12+7*pulse,0,7); ctx.fillStyle='rgba('+GOLD+','+(0.09*base)+')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(px,py,6,0,7);   ctx.fillStyle='rgba('+GOLD+','+(0.22*base)+')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(px,py,3.5,0,7); ctx.fillStyle='rgba('+GOLD+','+base+')'; ctx.fill();
+      if (front) {
+        var fs=Math.max(10,Math.round(R*0.062));
+        ctx.font='600 '+fs+'px Poppins,sans-serif';
+        ctx.fillStyle='rgba('+GOLD+',0.9)'; ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText('Hyderabad', px+12, py);
+      }
     } else {
-      ctx.beginPath(); ctx.arc(p[0], p[1], front ? 5 : 4, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.16 * base) + ')'; ctx.fill();
-      ctx.beginPath(); ctx.arc(p[0], p[1], front ? 2.5 : 2, 0, 7); ctx.fillStyle = 'rgba(' + GOLD + ',' + (0.95 * base) + ')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(px,py,front?4.5:3.5,0,7); ctx.fillStyle='rgba('+GOLD+','+(0.14*base)+')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(px,py,front?2.2:1.8,0,7); ctx.fillStyle='rgba('+GOLD+','+(0.88*base)+')'; ctx.fill();
+      if (front && p[2]>0.18 && R>140) {
+        var lfs=Math.max(8,Math.round(R*0.050));
+        ctx.font='500 '+lfs+'px Poppins,sans-serif';
+        ctx.fillStyle='rgba('+WH+',0.74)'; ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText(c.name, px+7, py);
+      }
     }
   }
 
-  function draw() {
-    ctx.clearRect(0, 0, W, W);
-    var g = ctx.createRadialGradient(cx - R * 0.36, cy - R * 0.42, R * 0.1, cx, cy, R * 1.05);
-    g.addColorStop(0, 'rgba(56,74,152,0.45)'); g.addColorStop(0.55, 'rgba(20,30,74,0.34)'); g.addColorStop(1, 'rgba(8,12,34,0.55)');
-    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fillStyle = g; ctx.fill();
+  // ── main draw ──────────────────────────────────────────────────────────────
+  function draw(t) {
+    t = t||0; cT=Math.cos(theta); sT=Math.sin(theta);
+    ctx.clearRect(0,0,canW,canW);
+    var g=ctx.createRadialGradient(cx-R*0.36,cy-R*0.42,R*0.1,cx,cy,R*1.05);
+    g.addColorStop(0,'rgba(56,74,152,0.45)'); g.addColorStop(0.55,'rgba(20,30,74,0.34)'); g.addColorStop(1,'rgba(8,12,34,0.55)');
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,7); ctx.fillStyle=g; ctx.fill();
 
-    drawGraticule(false); drawDots(false);
-    drawGraticule(true); drawDots(true);
-    for (var i = 0; i < arcs.length; i++) drawArc(arcs[i]);
-    for (var k = 0; k < cities.length; k++) drawHub(cities[k]);
+    drawGrat(false); drawDots(false);
+    drawMap();
+    drawGrat(true);  drawDots(true);
 
-    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.lineWidth = 1.1; ctx.strokeStyle = 'rgba(' + GOLD + ',0.22)'; ctx.stroke();
-    var rim = ctx.createLinearGradient(cx - R, cy - R, cx + R * 0.4, cy + R * 0.4);
-    rim.addColorStop(0, 'rgba(' + GOLD + ',0.55)'); rim.addColorStop(0.45, 'rgba(' + GOLD + ',0)');
-    ctx.beginPath(); ctx.arc(cx, cy, R, Math.PI * 0.92, Math.PI * 1.62); ctx.lineWidth = 1.6; ctx.strokeStyle = rim; ctx.stroke();
+    for (var i=0; i<arcs.length; i++) drawArc(arcs[i], t);
+    drawHub(HOME, t);
+    for (var j=0; j<DESTS.length; j++) drawHub(DESTS[j], t);
+
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,7);
+    ctx.lineWidth=1.1; ctx.strokeStyle='rgba('+GOLD+',0.22)'; ctx.stroke();
+    var rim=ctx.createLinearGradient(cx-R,cy-R,cx+R*0.4,cy+R*0.4);
+    rim.addColorStop(0,'rgba('+GOLD+',0.55)'); rim.addColorStop(0.45,'rgba('+GOLD+',0)');
+    ctx.beginPath(); ctx.arc(cx,cy,R,Math.PI*0.92,Math.PI*1.62);
+    ctx.lineWidth=1.6; ctx.strokeStyle=rim; ctx.stroke();
   }
 
-  function now() { return (window.performance && performance.now) ? performance.now() : Date.now(); }
-
-  var running = false, last = 0, visible = true, inview = true;
+  // ── animation loop ─────────────────────────────────────────────────────────
+  var running=false, lastT=0, visible=true, inview=true;
   function frame(t) {
     if (!running) return;
-    var dt = last ? (t - last) / 1000 : 0; last = t;
-    if (!reduce) theta += SPIN * Math.min(dt, 0.05);
-    draw();
-    if (reduce) { running = false; return; }
+    var dt=lastT?(t-lastT)/1000:0; lastT=t;
+    if (!reduce) theta+=SPIN*Math.min(dt,0.05);
+    draw(t);
+    if (reduce){ running=false; return; }
     requestAnimationFrame(frame);
   }
-  function start() { if (running || !visible || !inview) return; if (!resize()) return; running = true; last = 0; requestAnimationFrame(frame); }
-  function stop() { running = false; }
+  function start(){ if(running||!visible||!inview) return; if(!resize()) return; running=true; lastT=0; requestAnimationFrame(frame); }
+  function stop(){ running=false; }
 
-  if (resize()) draw();
-  document.addEventListener('visibilitychange', function () { visible = !document.hidden; visible ? start() : stop(); });
+  if (resize()) draw(0);
+  document.addEventListener('visibilitychange',function(){ visible=!document.hidden; visible?start():stop(); });
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (e) { inview = e[0].isIntersecting; inview ? start() : stop(); }, { threshold: 0.05 }).observe(canvas);
+    new IntersectionObserver(function(e){ inview=e[0].isIntersecting; inview?start():stop(); },{threshold:0.05}).observe(canvas);
   }
   if ('ResizeObserver' in window) {
-    var rt; new ResizeObserver(function () {
-      clearTimeout(rt); rt = setTimeout(function () { stop(); if (resize()) { draw(); start(); } }, 120);
-    }).observe(canvas);
+    var rt; new ResizeObserver(function(){ clearTimeout(rt); rt=setTimeout(function(){ stop(); if(resize()){draw(0);start();} },120); }).observe(canvas);
   }
   start();
 })();
