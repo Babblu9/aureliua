@@ -30,10 +30,11 @@
     .page-hero-badges { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
     .page-hero-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--white); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; }
     .page-hero-badge.gold { background: rgba(184,137,42,0.18); border-color: rgba(184,137,42,0.45); color: var(--gold-light); }
-    .philosophy-quote { text-align: center; max-width: 720px; margin: 32px auto 44px; padding: 0; border-left: none; }
-    .philosophy-quote blockquote { font-family: var(--font-serif); font-size: clamp(1.5rem, 3.2vw, 2rem); font-style: italic; color: var(--navy); line-height: 1.4; }
-    .philosophy-quote cite { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 16px; }
-    .mvv-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .philosophy-quote { text-align: left; margin: 0 0 28px; padding: 0; border-left: none; }
+    .philosophy-quote blockquote { font-family: var(--font-serif); font-size: clamp(1.4rem, 2.5vw, 1.7rem); font-style: italic; color: var(--navy); line-height: 1.45; }
+    .philosophy-quote cite { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 14px; }
+    .philosophy-text p { color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; font-size: 0.94rem; }
+    .mvv-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
     .mvv-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; }
     .mvv-card h3 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
     .mvv-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; }
@@ -116,26 +117,30 @@
       <h2 class="section-title">The Aurelius Principle</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="philosophy-quote">
-      <blockquote>"Waste no more time arguing what a good man should be. Be one."</blockquote>
-      <cite>— Marcus Aurelius, Meditations</cite>
-    </div>
-    <div class="philosophy-text" style="max-width:800px;margin:0 auto 56px;text-align:center">
-      <p style="color:var(--text-mid);line-height:1.9;font-size:1rem;margin-bottom:18px">Marcus Aurelius believed that discipline, reason, and continuous self-improvement were not merely virtues but responsibilities. At Aurelius, we carry that spirit into every mentoring conversation, academic pathway, and university aspiration.</p>
-      <p style="color:var(--text-mid);line-height:1.9;font-size:1rem">We believe scholarship without character is incomplete, and ambition without purpose is fragile. The students who thrive globally are those who combine intellectual excellence with resilience, integrity, and leadership.</p>
-    </div>
-    <div class="mvv-grid" style="max-width:900px;margin:0 auto">
-      <div class="mvv-card">
-        <h3>Vision</h3>
-        <p>To cultivate a generation of intellectually curious, globally aware, and purpose-driven scholars.</p>
+    <div class="philosophy-grid">
+      <div>
+        <div class="philosophy-quote">
+          <blockquote>"Waste no more time arguing what a good man should be. Be one."</blockquote>
+          <cite>— Marcus Aurelius, Meditations</cite>
+        </div>
+        <div class="philosophy-text">
+          <p>Marcus Aurelius believed that discipline, reason, and continuous self-improvement were not merely virtues but responsibilities. At Aurelius, we carry that spirit into every mentoring conversation, academic pathway, and university aspiration.</p>
+          <p>We believe scholarship without character is incomplete, and ambition without purpose is fragile. The students who thrive globally are those who combine intellectual excellence with resilience, integrity, and leadership.</p>
+        </div>
       </div>
-      <div class="mvv-card">
-        <h3>Mission</h3>
-        <p>To prepare students for success at the world's leading universities.</p>
-      </div>
-      <div class="mvv-card">
-        <h3>Our Commitment</h3>
-        <p>To help students unlock their full potential and thrive in an increasingly interconnected world.</p>
+      <div class="mvv-grid">
+        <div class="mvv-card">
+          <h3>Vision</h3>
+          <p>To cultivate a generation of intellectually curious, globally aware, and purpose-driven scholars.</p>
+        </div>
+        <div class="mvv-card">
+          <h3>Mission</h3>
+          <p>To prepare students for success at the world's leading universities.</p>
+        </div>
+        <div class="mvv-card">
+          <h3>Our Commitment</h3>
+          <p>To help students unlock their full potential and thrive in an increasingly interconnected world.</p>
+        </div>
       </div>
     </div>
   </div>
