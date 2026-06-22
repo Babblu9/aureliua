@@ -27,6 +27,25 @@
   <style>
     .fade-card { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade-card.visible { opacity: 1; transform: translateY(0); }
+    .distinction-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .distinction-grid .service-card:first-child { grid-column: 1 / -1; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+    .why-card { text-align: center; padding: 40px 28px; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; transition: all var(--ease); }
+    .why-card:hover { border-color: rgba(184,137,42,0.3); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .why-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(212,168,67,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--gold); }
+    .why-icon svg { width: 26px; height: 26px; }
+    .why-card h3 { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+    .why-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; }
+    .difference-section { background: var(--navy); color: #fff; }
+    .difference-section .section-label { color: var(--gold); }
+    .difference-section .section-title { color: #fff; }
+    .difference-section .section-divider { background: var(--gold); }
+    .difference-text { max-width: 780px; margin: 28px auto 0; font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.7; color: rgba(255,255,255,0.85); text-align: center; }
+    @media (max-width: 900px) {
+      .distinction-grid { grid-template-columns: 1fr; }
+      .distinction-grid .service-card:first-child { grid-column: auto; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -45,7 +64,7 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="programs.html">The Scholar Pathways</a></li>
+    <li><a href="programs.html">The Aurelius Pathways</a></li>
     <li><a href="university.html" class="active">The Aurelius Way</a></li>
     <li><a href="global-pathways.html">Global Destinations</a></li>
     <li><a href="index.html#contact" class="nav-cta">Enquire Now</a></li>
@@ -55,280 +74,118 @@
 
 <div class="page-hero">
   <span class="page-hero-label">The Aurelius Way</span>
-  <h1 class="page-hero-title">From Application<br/>to Acceptance</h1>
-  <p class="page-hero-sub">The strongest academic record still needs a compelling application. We help students present their best selves to admissions offices across the globe.</p>
+  <h1 class="page-hero-title">Building Applications<br/>That Stand Apart</h1>
+  <p class="page-hero-sub">Thoughtful strategy, authentic storytelling, and expert guidance for admissions to the world's leading universities.</p>
 </div>
 
-<!-- ADMISSIONS PROCESS -->
+<!-- THE AURELIUS WAY PROCESS -->
 <section class="admissions-process">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">How We Work</span>
-      <h2 class="section-title">A Structured Path<br/>to Your Target University</h2>
+      <span class="section-label">Our Approach</span>
+      <h2 class="section-title">The Four Pillars<br/>of Our Process</h2>
       <div class="section-divider"></div>
-      <p class="section-desc">Our admissions process begins with understanding where a student wants to go, then building everything around getting them there.</p>
+      <p class="section-desc">Every application we shape moves through a deliberate journey — from understanding the student to presenting their story with clarity and confidence.</p>
     </div>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">1</div>
-        <h3>Profile Assessment</h3>
-        <p>We evaluate your academic record, test scores, extracurriculars, and target universities to identify strengths, gaps, and the best path forward.</p>
+        <h3>Discover</h3>
+        <p>We begin by understanding each student's aspirations, strengths, and ambitions — the foundation upon which every decision is made.</p>
       </div>
       <div class="process-step">
         <div class="step-num">2</div>
-        <h3>University Selection</h3>
-        <p>A balanced list of reach, match, and safety universities tailored to your profile, interests, and realistic admissions prospects.</p>
+        <h3>Explore</h3>
+        <p>We identify best-fit universities aligned with academic goals, personal values, and long-term ambitions across the world.</p>
       </div>
       <div class="process-step">
         <div class="step-num">3</div>
-        <h3>Application Building</h3>
-        <p>Essays, recommendations, activity lists, and supplemental materials refined through multiple rounds of feedback until every element is strong.</p>
+        <h3>Build</h3>
+        <p>We develop academic excellence, leadership experience, and extracurricular distinction that form a compelling, authentic profile.</p>
       </div>
       <div class="process-step">
         <div class="step-num">4</div>
-        <h3>Interview and Offer</h3>
-        <p>Mock interviews, offer evaluation guidance, and support through final decisions, visa applications, and pre-departure preparation.</p>
+        <h3>Present</h3>
+        <p>We craft compelling applications, essays, and interview performances that communicate a student's true value to admissions committees.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- BUILDING DISTINCTION -->
 <section>
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Admissions Services</span>
-      <h2 class="section-title">Every Component<br/>of a Strong Application</h2>
+      <span class="section-label">Building Distinction</span>
+      <h2 class="section-title">The Elements of a<br/>Standout Application</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="services-grid">
+    <div class="services-grid distinction-grid">
       <div class="service-card">
-        <div class="service-icon"><i data-lucide="globe"></i></div>
-        <h3>Global University Admissions</h3>
-        <p>Strategic guidance for competitive applications to universities in the US, UK, Europe, Australia, Singapore, and Canada. We understand what each institution's admissions office is looking for in a candidate from India, and we help students present themselves accordingly.</p>
-        <ul class="feature-list" style="margin-top:16px">
-          <li>University research and shortlisting</li>
-          <li>Application timeline planning</li>
-          <li>Common App, UCAS, and university portals guidance</li>
-          <li>Scholarship and financial aid identification</li>
-        </ul>
+        <div class="service-icon"><i data-lucide="target"></i></div>
+        <h3>University Strategy</h3>
+        <p>Research, shortlisting, and strategy tailored to the admissions expectations of top universities worldwide. We help students build a balanced, ambitious list and a clear plan for each institution.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="route"></i></div>
+        <h3>Strategic Planning</h3>
+        <p>Every academic choice, extracurricular commitment, and milestone is aligned with long-term university goals — so no effort is wasted.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="star"></i></div>
-        <h3>Profile Building</h3>
-        <p>A strong application is built over years, not weeks. We work with students from as early as Grade 9 to develop an extracurricular and leadership profile that reflects genuine achievement beyond the classroom.</p>
-        <ul class="feature-list" style="margin-top:16px">
-          <li>Activity selection aligned to academic interests</li>
-          <li>Leadership roles and community impact</li>
-          <li>Research projects, competitions, and publications</li>
-          <li>Summer programme and internship guidance</li>
-        </ul>
+        <h3>Scholar Development</h3>
+        <p>We help students build a distinctive profile that reflects initiative, impact, and leadership — one that extends well beyond grades and test scores.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="pen-line"></i></div>
-        <h3>Essay Development</h3>
-        <p>The personal statement and supplemental essays are where a student's voice either comes through or gets lost. Our essay coaching draws out authentic narratives and shapes them into writing that admissions readers remember.</p>
-        <ul class="feature-list" style="margin-top:16px">
-          <li>Topic brainstorming and story selection</li>
-          <li>Multiple drafts with faculty feedback</li>
-          <li>Common App main essay and supplements</li>
-          <li>UK personal statement (UCAS) coaching</li>
-        </ul>
+        <h3>Personal Narratives</h3>
+        <p>We craft authentic, reflective essays that communicate character, purpose, and intellectual curiosity with clarity — the human core of every application.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="mic"></i></div>
-        <h3>Interview Preparation</h3>
-        <p>Many competitive universities and scholarship programmes require interviews. We prepare students to walk into those conversations with confidence, clarity, and a clear sense of what they want the interviewer to understand about them.</p>
-        <ul class="feature-list" style="margin-top:16px">
-          <li>Mock interviews with video review</li>
-          <li>Subject knowledge and current affairs preparation</li>
-          <li>Oxbridge and US college interview formats</li>
-          <li>Body language, pacing, and structure coaching</li>
-        </ul>
+        <h3>Interview Excellence</h3>
+        <p>Through mock interviews and expert feedback sessions, we prepare students to communicate confidently, think on their feet, and leave a lasting impression.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- YOUNIVERSITY - TARGET UNIVERSITIES -->
+<!-- WHY FAMILIES CHOOSE AURELIUS -->
 <section style="background:var(--cream)">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">YouUniversity</span>
-      <h2 class="section-title">Universities Our Students<br/>Are Targeting</h2>
+      <span class="section-label">Why Families Choose Aurelius</span>
+      <h2 class="section-title">Partnership, Purpose,<br/>and Global Insight</h2>
       <div class="section-divider"></div>
-      <p class="section-desc">We guide students toward universities that match their academic profile, career goals, and personal ambitions across four continents.</p>
     </div>
-
-    <!-- UK -->
-    <div style="margin-bottom:60px">
-      <h3 style="font-family:var(--font-serif);font-size:1.6rem;color:var(--navy);margin-bottom:24px;display:flex;align-items:center;gap:12px">
-        <i data-lucide="flag" class="country-flag"></i> <span>United Kingdom</span>
-      </h3>
-      <div class="university-list">
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="landmark"></i></div>
-          <h4>University of Oxford</h4>
-          <p>Ranked #1 globally. Collegiate system.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="microscope"></i></div>
-          <h4>University of Cambridge</h4>
-          <p>Sciences, Maths, Law, Economics.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="chart-bar"></i></div>
-          <h4>London School of Economics</h4>
-          <p>Social sciences, economics, law.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="settings"></i></div>
-          <h4>Imperial College London</h4>
-          <p>Engineering, science, medicine, business.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="globe"></i></div>
-          <h4>UCL</h4>
-          <p>Broad range of disciplines, London.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="graduation-cap"></i></div>
-          <h4>University of Edinburgh</h4>
-          <p>Medicine, law, arts and sciences.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="briefcase"></i></div>
-          <h4>Warwick</h4>
-          <p>Business, economics, engineering.</p>
-          <div class="uni-country">UK</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="building-2"></i></div>
-          <h4>King's College London</h4>
-          <p>Medicine, law, humanities.</p>
-          <div class="uni-country">UK</div>
-        </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="user-check"></i></div>
+        <h3>Individual Mentorship</h3>
+        <p>Personalized guidance and expert support at every stage — from first conversation to final offer.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="badge-check"></i></div>
+        <h3>Authentic Positioning</h3>
+        <p>Applications that reflect genuine strengths, values, and aspirations rather than a manufactured version of success.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="globe"></i></div>
+        <h3>Global Perspective</h3>
+        <p>Insights drawn from our experience with leading universities worldwide, adapted to each student's unique context.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- USA -->
-    <div style="margin-bottom:60px">
-      <h3 style="font-family:var(--font-serif);font-size:1.6rem;color:var(--navy);margin-bottom:24px;display:flex;align-items:center;gap:12px">
-        <i data-lucide="flag" class="country-flag"></i> <span>United States</span>
-      </h3>
-      <div class="university-list">
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="medal"></i></div>
-          <h4>Harvard University</h4>
-          <p>Liberal arts, law, medicine, business.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="telescope"></i></div>
-          <h4>MIT</h4>
-          <p>Engineering, computer science, physics.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="trees"></i></div>
-          <h4>Stanford University</h4>
-          <p>Technology, entrepreneurship, humanities.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="landmark"></i></div>
-          <h4>Columbia University</h4>
-          <p>Journalism, business, sciences, NYC.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="drama"></i></div>
-          <h4>Yale University</h4>
-          <p>Law, arts, drama, liberal arts.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="ruler"></i></div>
-          <h4>Carnegie Mellon</h4>
-          <p>CS, robotics, fine arts, business.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="sun"></i></div>
-          <h4>UC Berkeley</h4>
-          <p>Engineering, computer science, social sciences.</p>
-          <div class="uni-country">USA</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="building-2"></i></div>
-          <h4>New York University</h4>
-          <p>Business, arts, law, global campuses.</p>
-          <div class="uni-country">USA</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CANADA & SINGAPORE -->
-    <div>
-      <h3 style="font-family:var(--font-serif);font-size:1.6rem;color:var(--navy);margin-bottom:24px;display:flex;align-items:center;gap:12px">
-        <i data-lucide="globe"></i> <span>Canada &amp; Asia-Pacific</span>
-      </h3>
-      <div class="university-list">
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="leaf"></i></div>
-          <h4>University of Toronto</h4>
-          <p>Canada's leading research university.</p>
-          <div class="uni-country">Canada</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="mountain-snow"></i></div>
-          <h4>UBC</h4>
-          <p>Sciences, arts, commerce, Vancouver.</p>
-          <div class="uni-country">Canada</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="crown"></i></div>
-          <h4>NUS</h4>
-          <p>Asia's top university. All disciplines.</p>
-          <div class="uni-country">Singapore</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="flask-conical"></i></div>
-          <h4>NTU</h4>
-          <p>Engineering, business, sciences.</p>
-          <div class="uni-country">Singapore</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="sprout"></i></div>
-          <h4>University of Melbourne</h4>
-          <p>Medicine, law, business, arts.</p>
-          <div class="uni-country">Australia</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="landmark"></i></div>
-          <h4>ANU</h4>
-          <p>Research-intensive, policy and sciences.</p>
-          <div class="uni-country">Australia</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="flag"></i></div>
-          <h4>Waseda University</h4>
-          <p>Business, international studies, Tokyo.</p>
-          <div class="uni-country">Japan</div>
-        </div>
-        <div class="uni-card">
-          <div class="uni-flag"><i data-lucide="flower-2"></i></div>
-          <h4>HKU</h4>
-          <p>Medicine, law, architecture, business.</p>
-          <div class="uni-country">Hong Kong</div>
-        </div>
-      </div>
+<!-- THE AURELIUS DIFFERENCE -->
+<section class="difference-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">The Aurelius Difference</span>
+      <h2 class="section-title">More Than Admissions.<br/>We Shape Futures.</h2>
+      <div class="section-divider"></div>
+      <p class="difference-text">We do not simply help students apply to universities. We help them understand who they are, where they belong, and how to present their story with clarity and confidence.</p>
     </div>
   </div>
 </section>
