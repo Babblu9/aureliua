@@ -48,7 +48,8 @@
     .pathway-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 16px; margin-bottom: 28px; }
     .pathway-list li { font-size: 0.82rem; color: var(--text-mid); display: flex; align-items: flex-start; gap: 8px; }
     .pathway-list li::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
-    .pathway-programs { background: var(--cream); border-radius: var(--radius); padding: 20px 22px; margin-top: auto; }
+    .pathway-programs { background: var(--cream); border-radius: var(--radius); padding: 20px 22px; margin-top: auto; margin-bottom: 20px; }
+    .pathway-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .pathway-programs p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; }
     .pathway-programs strong { color: var(--navy); }
     .comparison-section { background: var(--cream); }
@@ -108,7 +109,7 @@
 <section>
   <div class="container">
     <div class="pathway-split">
-      <div class="pathway-card gold-accent">
+      <div class="pathway-card gold-accent" id="global-scholars">
         <div class="pathway-header">
           <div class="pathway-icon"><i data-lucide="globe"></i></div>
           <div class="pathway-title">Aurelius Global Scholars</div>
@@ -133,9 +134,12 @@
         <div class="pathway-programs">
           <p><strong>Programs Available:</strong><br/>Aurelius Global Scholars – Integrated (Intermediate + SAT + Admissions)<br/>Aurelius Global Scholars (Evening Scholars Program)</p>
         </div>
+        <div class="pathway-actions">
+          <a href="aurelius-global-scholars.html" class="btn btn-outline-navy">Explore Programme →</a>
+        </div>
       </div>
 
-      <div class="pathway-card navy-accent">
+      <div class="pathway-card navy-accent" id="future-leaders">
         <div class="pathway-header">
           <div class="pathway-icon"><i data-lucide="trending-up"></i></div>
           <div class="pathway-title">Aurelius Future Leaders</div>
@@ -157,6 +161,9 @@
         </ul>
         <div class="pathway-programs">
           <p><strong>Programs Available:</strong><br/>Aurelius Future Leaders – Integrated (Intermediate + IPMAT)<br/>Aurelius Future Leaders (Evening Scholars Program)</p>
+        </div>
+        <div class="pathway-actions">
+          <a href="aurelius-future-leaders.html" class="btn btn-outline-navy">Explore Programme →</a>
         </div>
       </div>
     </div>
@@ -274,8 +281,8 @@
       <div class="footer-col">
         <h3>Pathways</h3>
         <ul>
-          <li><a href="#global-scholars">Aurelius Global Scholars</a></li>
-          <li><a href="#future-leaders">Aurelius Future Leaders</a></li>
+          <li><a href="aurelius-global-scholars.html">Aurelius Global Scholars</a></li>
+          <li><a href="aurelius-future-leaders.html">Aurelius Future Leaders</a></li>
         </ul>
       </div>
       <div class="footer-col">
