@@ -27,20 +27,49 @@
   <style>
     .fade-card { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade-card.visible { opacity: 1; transform: translateY(0); }
-    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
-    .team-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; text-align: center; transition: all var(--ease); }
-    .team-card:hover { border-color: rgba(184,137,42,0.3); box-shadow: var(--shadow); transform: translateY(-3px); }
-    .team-avatar { width: 72px; height: 72px; background: var(--navy); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold-light); }
-    .team-card h3 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-    .team-card .role { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .team-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.7; }
+    .page-hero-badges { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+    .page-hero-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--white); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; }
+    .page-hero-badge.gold { background: rgba(184,137,42,0.18); border-color: rgba(184,137,42,0.45); color: var(--gold-light); }
+    .philosophy-quote { text-align: center; max-width: 720px; margin: 32px auto 44px; padding: 0; border-left: none; }
+    .philosophy-quote blockquote { font-family: var(--font-serif); font-size: clamp(1.5rem, 3.2vw, 2rem); font-style: italic; color: var(--navy); line-height: 1.4; }
+    .philosophy-quote cite { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 16px; }
+    .mvv-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .mvv-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; }
+    .mvv-card h3 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .mvv-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; }
     .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
     .value-card { padding: 36px 32px; border: 1px solid var(--border); border-radius: var(--radius); transition: all var(--ease); }
     .value-card:hover { border-color: rgba(184,137,42,0.3); transform: translateY(-3px); box-shadow: var(--shadow); }
-    .value-num { font-size: 2.4rem; color: var(--gold); opacity: 0.85; line-height: 1; margin-bottom: 14px; }
-    .value-card h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+    .value-num { font-size: 2rem; color: var(--gold); line-height: 1; margin-bottom: 16px; }
+    .value-card h3 { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
     .value-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; }
-    @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: 1fr; } }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .team-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px; text-align: center; transition: all var(--ease); }
+    .team-card:hover { border-color: rgba(184,137,42,0.3); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .team-avatar { width: 64px; height: 64px; background: var(--navy); border-radius: 50%; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; color: var(--gold-light); font-size: 1.6rem; }
+    .team-card h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .team-card .role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .team-card .area { font-size: 0.78rem; font-weight: 600; color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+    .team-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.7; }
+    .campus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .campus-info { display: flex; flex-direction: column; gap: 24px; }
+    .campus-item { display: flex; gap: 16px; align-items: flex-start; }
+    .campus-icon { width: 44px; height: 44px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold-light); font-size: 1.1rem; flex-shrink: 0; }
+    .campus-text h3 { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 4px; }
+    .campus-text p, .campus-text a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
+    .campus-text a:hover { color: var(--gold); }
+    .about-journey { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); padding: 80px 0; }
+    .about-journey-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .about-journey-text h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; color: var(--navy-dark); line-height: 1.15; }
+    .about-journey-text p { font-size: 1rem; color: rgba(15,25,64,0.7); margin-top: 10px; max-width: 560px; }
+    @media (max-width: 1024px) {
+      .campus-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .about-journey-inner { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -70,42 +99,43 @@
 <!-- PAGE HERO -->
 <div class="page-hero">
   <span class="page-hero-label">Our Story</span>
-  <h1 class="page-hero-title">Named After a Philosopher.<br/>Built for the Future.</h1>
-  <p class="page-hero-sub">Aurelius Academy traces its identity to one of history's most enduring thinkers, and to the conviction that great preparation shapes great lives.</p>
+  <h1 class="page-hero-title">A Legacy of Thought.<br/>A Future of Opportunity.</h1>
+  <p class="page-hero-sub">Inspired by the wisdom of Marcus Aurelius and dedicated to cultivating scholarship, character, and leadership for a world without borders.</p>
+  <div class="page-hero-badges">
+    <span class="page-hero-badge gold">Meditations</span>
+    <span class="page-hero-badge">Leadership</span>
+    <span class="page-hero-badge">Wisdom · Discipline · Purpose</span>
+  </div>
 </div>
 
 <!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="container">
-    <div class="philosophy-grid">
-      <div>
-        <div class="section-header left">
-          <span class="section-label">Our Philosophy</span>
-          <h2 class="section-title">The Aurelius<br/>Principle</h2>
-          <div class="section-divider"></div>
-        </div>
-        <div class="philosophy-quote">
-          <blockquote>"Waste no more time arguing what a good man should be. Be one."</blockquote>
-          <cite>Marcus Aurelius, Meditations</cite>
-        </div>
-        <div class="philosophy-text">
-          <p>Marcus Aurelius ruled the Roman Empire while writing some of history's most important philosophical texts. He believed that discipline, reason, and continuous self-improvement were not just virtues; they were obligations. We carry that spirit into every classroom.</p>
-          <p>At Aurelius Academy, we don't separate academic preparation from character development. The student who earns a 1550 on the SAT and earns it through consistent effort, intellectual honesty, and resilience is the student who will thrive at any university on earth.</p>
-        </div>
+    <div class="section-header">
+      <span class="section-label">Our Philosophy</span>
+      <h2 class="section-title">The Aurelius Principle</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="philosophy-quote">
+      <blockquote>"Waste no more time arguing what a good man should be. Be one."</blockquote>
+      <cite>— Marcus Aurelius, Meditations</cite>
+    </div>
+    <div class="philosophy-text" style="max-width:800px;margin:0 auto 56px;text-align:center">
+      <p style="color:var(--text-mid);line-height:1.9;font-size:1rem;margin-bottom:18px">Marcus Aurelius believed that discipline, reason, and continuous self-improvement were not merely virtues but responsibilities. At Aurelius, we carry that spirit into every mentoring conversation, academic pathway, and university aspiration.</p>
+      <p style="color:var(--text-mid);line-height:1.9;font-size:1rem">We believe scholarship without character is incomplete, and ambition without purpose is fragile. The students who thrive globally are those who combine intellectual excellence with resilience, integrity, and leadership.</p>
+    </div>
+    <div class="mvv-grid" style="max-width:900px;margin:0 auto">
+      <div class="mvv-card">
+        <h3>Vision</h3>
+        <p>To cultivate a generation of intellectually curious, globally aware, and purpose-driven scholars.</p>
       </div>
-      <div class="mvv-grid">
-        <div class="mvv-card">
-          <h3>Mission</h3>
-          <p>To prepare students from Hyderabad for admission to the world's leading universities through rigorous academic coaching, personal mentorship, and strategic admissions guidance.</p>
-        </div>
-        <div class="mvv-card">
-          <h3>Vision</h3>
-          <p>A generation of scholars from India who compete confidently on the global stage, equipped with the knowledge, language, and character to lead in any field.</p>
-        </div>
-        <div class="mvv-card">
-          <h3>Approach</h3>
-          <p>Small cohorts. Individual attention. Measurable targets. Every student receives a personalised learning plan aligned to their university ambitions and academic strengths.</p>
-        </div>
+      <div class="mvv-card">
+        <h3>Mission</h3>
+        <p>To prepare students for success at the world's leading universities.</p>
+      </div>
+      <div class="mvv-card">
+        <h3>Our Commitment</h3>
+        <p>To help students unlock their full potential and thrive in an increasingly interconnected world.</p>
       </div>
     </div>
   </div>
@@ -116,29 +146,30 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">What We Stand For</span>
-      <h2 class="section-title">Four Principles That<br/>Guide Everything We Do</h2>
+      <h2 class="section-title">The Values That Define Us</h2>
       <div class="section-divider"></div>
+      <p class="section-desc">At Aurelius Academy, our philosophy is reflected not only in what we teach, but in how we teach, mentor, and guide. These values shape every lesson, every conversation, and every decision we make.</p>
     </div>
     <div class="values-grid">
       <div class="value-card">
-        <div class="value-num"><i data-lucide="landmark"></i></div>
-        <h3>Intellectual Rigour</h3>
-        <p>We hold students to high standards because high standards produce high results. Every lesson, every mock test, every essay review is designed to push students toward their genuine best, not a comfortable approximation of it.</p>
+        <div class="value-num"><i data-lucide="brain"></i></div>
+        <h3>Intellectual Excellence</h3>
+        <p>Pursuing depth of understanding, disciplined thinking, and academic distinction.</p>
       </div>
       <div class="value-card">
-        <div class="value-num"><i data-lucide="handshake"></i></div>
-        <h3>Honest Mentorship</h3>
-        <p>We tell students what they need to hear, not just what they want to hear. Our mentors give direct, actionable feedback on scores, essays, and interview performance, because honest feedback is the only kind that helps.</p>
+        <div class="value-num"><i data-lucide="shield-check"></i></div>
+        <h3>Character Before Credentials</h3>
+        <p>Recognising that integrity, resilience, and responsibility matter as much as achievement.</p>
       </div>
       <div class="value-card">
         <div class="value-num"><i data-lucide="globe"></i></div>
         <h3>Global Perspective</h3>
-        <p>Our programs are built around the realities of international admissions. We understand what Oxford wants from a personal statement, what MIT looks for beyond grades, and how NUS evaluates leadership. That specificity matters.</p>
+        <p>Preparing students to thrive in an interconnected world with confidence and cultural awareness.</p>
       </div>
       <div class="value-card">
-        <div class="value-num"><i data-lucide="trending-up"></i></div>
-        <h3>Long-Term Thinking</h3>
-        <p>We prepare students not just to gain admission but to succeed once they arrive. The critical thinking, research skills, and communication abilities we develop serve students long after their first acceptance letter.</p>
+        <div class="value-num"><i data-lucide="flag"></i></div>
+        <h3>Purposeful Leadership</h3>
+        <p>Encouraging students to use their talents in service of meaningful goals and positive impact.</p>
       </div>
     </div>
   </div>
@@ -149,64 +180,64 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">Our Faculty</span>
-      <h2 class="section-title">Mentors With<br/>Real-World Experience</h2>
+      <h2 class="section-title">Mentors Who Have Walked the Path</h2>
       <div class="section-divider"></div>
-      <p class="section-desc">Our faculty have studied and worked at leading institutions across the US, UK, and Asia. They bring that experience directly into the classroom.</p>
+      <p class="section-desc">Our mentors combine academic excellence, international admissions expertise, and a deep commitment to student growth. They do more than teach—they challenge, guide, and inspire students to achieve their highest potential.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-avatar">A</div>
-        <h3>SAT & AP Faculty</h3>
-        <div class="role">Mathematics & Sciences</div>
-        <p>Specialists in quantitative reasoning, calculus, and AP sciences, with experience preparing students for scores in the 99th percentile.</p>
+        <div class="team-avatar"><i data-lucide="calculator"></i></div>
+        <h3>Academic Mentors</h3>
+        <div class="area">Mathematics, Sciences &amp; Analytical Reasoning</div>
+        <p>Experienced educators who help students develop the quantitative skills, intellectual discipline, and academic confidence required for success at leading universities worldwide.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">L</div>
-        <h3>IELTS & English Faculty</h3>
-        <div class="role">Language & Communication</div>
-        <p>Certified language trainers focused on Academic English, IELTS band 7+, and the writing skills that distinguish strong university applications.</p>
+        <div class="team-avatar"><i data-lucide="pen-tool"></i></div>
+        <h3>Communication Mentors</h3>
+        <div class="area">Writing, English Proficiency &amp; Presentation Skills</div>
+        <p>Specialists in academic writing, English language development, interviews, and communication—helping students express their ideas with clarity, confidence, and impact.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">U</div>
-        <h3>Admissions Counsellors</h3>
-        <div class="role">University Guidance</div>
-        <p>Former admissions readers and application strategists who have guided students into programmes at Oxford, LSE, NUS, and top US universities.</p>
+        <div class="team-avatar"><i data-lucide="compass"></i></div>
+        <h3>University Advisors</h3>
+        <div class="area">Admissions Strategy &amp; Application Guidance</div>
+        <p>Experienced advisors who help students identify best-fit universities, craft compelling applications, and navigate the admissions process with purpose and precision.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LOCATION -->
+<!-- CAMPUS -->
 <section>
   <div class="container">
-    <div class="about-grid">
+    <div class="campus-grid">
       <div>
         <div class="section-header left">
-          <span class="section-label">Find Us</span>
-          <h2 class="section-title">Located in the Heart<br/>of Madhapur</h2>
+          <span class="section-label">Our Campus</span>
+          <h2 class="section-title">A Place for Focused Learning</h2>
           <div class="section-divider"></div>
         </div>
-        <p style="color:var(--text-mid);line-height:1.85;margin-bottom:24px">Our campus is situated in Ganesham Square, Madhapur, one of Hyderabad's most accessible educational and professional hubs. Evening classes make it practical for school and college students alike.</p>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
-            <div class="contact-detail-text">
+        <p style="color:var(--text-mid);line-height:1.85;margin-bottom:28px">Located in Madhapur, Hyderabad, Aurelius Academy provides a calm and purposeful environment where ambitious students can pursue academic excellence, develop intellectual confidence, and prepare for opportunities at leading universities around the world.</p>
+        <div class="campus-info">
+          <div class="campus-item">
+            <div class="campus-icon"><i data-lucide="map-pin"></i></div>
+            <div class="campus-text">
               <h3>Address</h3>
               <p>1st Floor, Ganesham Square, Road No. 7,<br/>Kakatiya Hills, Madhapur, Hyderabad 500081</p>
             </div>
           </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="clock"></i></div>
-            <div class="contact-detail-text">
-              <h3>Class Timings</h3>
-              <p>Evening batches available<br/>Monday through Saturday</p>
+          <div class="campus-item">
+            <div class="campus-icon"><i data-lucide="clock"></i></div>
+            <div class="campus-text">
+              <h3>Class Schedule</h3>
+              <p>Evening Scholar Program<br/>Monday to Saturday</p>
             </div>
           </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
-            <div class="contact-detail-text">
+          <div class="campus-item">
+            <div class="campus-icon"><i data-lucide="phone"></i></div>
+            <div class="campus-text">
               <h3>Admissions</h3>
-              <a href="tel:+919809914444" style="color:var(--text-mid)">+91 98099 14444</a>
+              <a href="tel:+919809914444">+91 98099 14444</a>
             </div>
           </div>
         </div>
@@ -215,12 +246,28 @@
         </div>
       </div>
       <div>
-        <div style="background:var(--light-gray);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)">
+        <div style="background:var(--light-gray);border-radius:12px;height:420px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)">
           <div style="text-align:center;color:var(--text-light)">
             <div style="font-size:3rem;margin-bottom:12px"><i data-lucide="map-pin"></i></div>
             <p style="font-size:0.875rem">Ganesham Square, Madhapur<br/>Hyderabad 500081</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEGIN YOUR AURELIUS JOURNEY -->
+<section class="about-journey">
+  <div class="container">
+    <div class="about-journey-inner">
+      <div class="about-journey-text">
+        <h2>Begin Your Aurelius Journey</h2>
+        <p>Take the first step towards a future of academic excellence, global opportunity, and purposeful growth.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn btn-navy">Apply Now →</a>
+        <a href="programs.html" class="btn btn-outline-gold">Explore Pathways</a>
       </div>
     </div>
   </div>
