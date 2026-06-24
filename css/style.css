@@ -35,7 +35,7 @@ body {
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-h1, h2, h3, blockquote { font-family: var(--font-serif); text-wrap: balance; }
+h1, h2, h3, h4, h5, h6, blockquote { font-family: var(--font-serif); text-wrap: balance; }
 
 /* ─── NAVBAR ───────────────────────────────────── */
 .navbar {
@@ -230,7 +230,10 @@ section { padding: 100px 0; }
 .programs { background: var(--cream); }
 .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .programs-grid .program-card:nth-child(4) { grid-column: span 2; }
-.program-card.wide .program-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+.programs-grid .program-card:nth-child(6) { grid-column: span 3; }
+.program-card.wide { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+.program-card-main { display: flex; flex-direction: column; align-items: flex-start; }
+.program-card.wide .program-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 0; }
 .program-card {
   background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 36px 32px; transition: all var(--ease); position: relative; overflow: hidden;
@@ -474,6 +477,7 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
   .stat-item:nth-child(3), .stat-item:nth-child(4) { padding-top: 36px; }
   .programs-grid { grid-template-columns: repeat(2, 1fr); }
   .programs-grid .program-card:nth-child(4) { grid-column: span 2; }
+  .programs-grid .program-card:nth-child(6) { grid-column: span 2; }
   .program-detail-grid { grid-template-columns: 1fr; }
   .program-detail-sidebar { position: relative; top: auto; }
   .process-steps { grid-template-columns: repeat(2,1fr); gap: 40px; }
@@ -501,7 +505,9 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
   .hero-inner { padding: 80px 24px; }
   .programs-grid { grid-template-columns: 1fr; }
   .programs-grid .program-card:nth-child(4) { grid-column: span 1; }
-  .program-card.wide .program-features { grid-template-columns: 1fr; }
+  .programs-grid .program-card:nth-child(6) { grid-column: span 1; }
+  .program-card.wide { grid-template-columns: 1fr; gap: 24px; }
+  .program-card.wide .program-features { display: flex; flex-direction: column; gap: 8px; }
   .why-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
