@@ -285,6 +285,35 @@
       color: var(--gold);
     }
 
+    .campus-gallery {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      grid-template-rows: repeat(2, 210px);
+      gap: 14px;
+    }
+
+    .campus-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--light-gray);
+    }
+
+    .campus-photo.feature {
+      grid-row: span 2;
+    }
+
+    .campus-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--ease);
+    }
+
+    .campus-photo:hover img {
+      transform: scale(1.03);
+    }
+
     .about-journey {
       background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       padding: 80px 0;
@@ -318,6 +347,10 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
+
+      .campus-gallery {
+        grid-template-rows: repeat(2, 180px);
+      }
     }
 
     @media (max-width: 768px) {
@@ -332,6 +365,21 @@
       .about-journey-inner {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .campus-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+      }
+
+      .campus-photo {
+        aspect-ratio: 4 / 3;
+      }
+
+      .campus-photo.feature {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        aspect-ratio: 16 / 10;
       }
     }
   </style>
@@ -556,13 +604,21 @@
             <a href="index.html#contact" class="btn btn-gold">Book a Consultation</a>
           </div>
         </div>
-        <div>
-          <div
-            style="background:var(--light-gray);border-radius:12px;height:420px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)">
-            <div style="text-align:center;color:var(--text-light)">
-              <div style="font-size:3rem;margin-bottom:12px"><i data-lucide="map-pin"></i></div>
-              <p style="font-size:0.875rem">Ganesham Square, Madhapur<br />Hyderabad 500081</p>
-            </div>
+        <div class="campus-gallery" aria-label="Aurelius campus gallery">
+          <div class="campus-photo feature">
+            <img src="gallery/campus4.png" alt="Aurelius Academy classroom" loading="lazy" />
+          </div>
+          <div class="campus-photo">
+            <img src="gallery/campus1.png" alt="Aurelius Academy hallway" loading="lazy" />
+          </div>
+          <div class="campus-photo">
+            <img src="gallery/campus2.png" alt="Aurelius Academy counselling room" loading="lazy" />
+          </div>
+          <div class="campus-photo">
+            <img src="gallery/campus3.png" alt="Aurelius Academy teaching session" loading="lazy" />
+          </div>
+          <div class="campus-photo">
+            <img src="gallery/campus5.png" alt="Aurelius Academy reading corner" loading="lazy" />
           </div>
         </div>
       </div>
