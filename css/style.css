@@ -187,14 +187,36 @@ section { padding: 100px 0; }
 .hero-program:hover { background: rgba(184,137,42,0.18); border-color: rgba(184,137,42,0.6); transform: translateY(-2px); }
 .hero-program-icon { width: 24px; height: 24px; background: rgba(184,137,42,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-light); flex-shrink: 0; }
 
-/* Globe */
-.hero-globe-wrap { display: flex; align-items: center; justify-content: center; position: relative; }
-.hero-globe-wrap::before {
-  content: ''; position: absolute; width: 92%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 50% 46%, rgba(184,137,42,0.20), rgba(184,137,42,0.05) 46%, transparent 70%);
-  filter: blur(8px); pointer-events: none;
+/* Hero Image instead of Globe */
+.hero-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
-.globe-canvas { position: relative; width: 100%; max-width: 480px; aspect-ratio: 1 / 1; display: block; }
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1.33; /* 4:3 aspect ratio */
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(184, 137, 42, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(184, 137, 42, 0.1);
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.hero-image-container:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(184, 137, 42, 0.6);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55), 0 0 40px rgba(184, 137, 42, 0.2);
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* ─── STATS BAR ─────────────────────────────────── */
 .stats-bar { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 0; }
@@ -466,7 +488,7 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
 /* ─── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; gap: 60px; padding: 100px 40px; }
-  .hero-globe-wrap { display: none; }
+  .hero-image-wrap { margin-top: 20px; }
   .about-grid { grid-template-columns: 1fr; }
   .pathways-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2,1fr); }
