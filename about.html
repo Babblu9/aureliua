@@ -287,27 +287,25 @@
 
     .campus-gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 220px 220px;
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
 
     .campus-photo {
-      border-radius: var(--radius);
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
       background: var(--light-gray);
     }
 
-    /* Reset all span/ratio overrides — uniform cells */
-    .campus-photo.feature,
-    .campus-photo.ratio-8-7,
-    .campus-photo.ratio-4-3,
-    .campus-photo.ratio-4-3b,
-    .campus-photo.ratio-2-3 {
-      grid-row: auto;
-      grid-column: auto;
-      aspect-ratio: unset;
+    .campus-photo.hero {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 7;
+    }
+
+    .campus-photo.standard {
+      aspect-ratio: 4 / 3;
     }
 
     .campus-photo img {
@@ -323,11 +321,8 @@
     }
 
     @media (max-width: 1024px) {
-      .campus-grid { grid-template-columns: 1fr; gap: 40px; }
-      .campus-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 190px 190px 190px;
-      }
+      .campus-grid { grid-template-columns: 1fr; gap: 64px; }
+      .campus-photo.hero { aspect-ratio: 16 / 9; }
     }
 
     @media (max-width: 768px) {
@@ -335,8 +330,11 @@
       .values-grid { grid-template-columns: 1fr; }
       .about-journey-inner { flex-direction: column; align-items: flex-start; }
       .campus-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 160px 160px 160px;
+        grid-template-columns: 1fr;
+      }
+      .campus-photo.hero, .campus-photo.standard {
+        aspect-ratio: 16 / 10;
+        grid-column: 1 / -1;
       }
     }
 
@@ -579,25 +577,20 @@
           </div>
         </div>
         <div class="campus-gallery" aria-label="Aurelius campus gallery">
-          <!-- campus4: 960×1280 portrait 3:4 — feature left column -->
-          <div class="campus-photo feature">
-            <img src="gallery/campus4.png" alt="Aurelius Academy classroom" loading="lazy" />
+          <div class="campus-photo hero">
+            <img src="gallery/hero_campus.png" alt="Aurelius Academy large campus hero" loading="lazy" />
           </div>
-          <!-- campus1: 1280×1147 near-square 8:7 -->
-          <div class="campus-photo ratio-8-7">
-            <img src="gallery/campus1.png" alt="Aurelius Academy hallway" loading="lazy" />
+          <div class="campus-photo standard">
+            <img src="gallery/hero_classroom.png" alt="Aurelius Academy modern classroom" loading="lazy" />
           </div>
-          <!-- campus2: 960×720 landscape 4:3 -->
-          <div class="campus-photo ratio-4-3">
-            <img src="gallery/campus2.png" alt="Aurelius Academy counselling room" loading="lazy" />
+          <div class="campus-photo standard">
+            <img src="gallery/library.png" alt="Aurelius Academy grand library" loading="lazy" />
           </div>
-          <!-- campus3: 640×480 landscape 4:3 -->
-          <div class="campus-photo ratio-4-3b">
-            <img src="gallery/campus3.png" alt="Aurelius Academy teaching session" loading="lazy" />
+          <div class="campus-photo standard">
+            <img src="gallery/student_lounge.png" alt="Aurelius Academy student lounge" loading="lazy" />
           </div>
-          <!-- campus5: 836×1280 portrait — spans 2 cols on row 2 -->
-          <div class="campus-photo ratio-2-3">
-            <img src="gallery/campus5.png" alt="Aurelius Academy reading corner" loading="lazy" />
+          <div class="campus-photo standard">
+            <img src="gallery/counseling_room.png" alt="Aurelius Academy counseling room" loading="lazy" />
           </div>
         </div>
       </div>
