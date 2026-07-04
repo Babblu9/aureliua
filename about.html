@@ -285,9 +285,9 @@
       color: var(--gold);
     }
 
-    .campus-gallery {
+    .campus-gallery-six {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
@@ -311,17 +311,16 @@
       mix-blend-mode: overlay;
     }
 
-    .campus-photo.hero {
-      grid-column: 1 / -1;
-      aspect-ratio: 16 / 9;
+    .campus-photo.hero-only {
+      aspect-ratio: 4 / 3;
     }
     
-    .campus-photo.hero img {
+    .campus-photo.hero-only img {
       object-position: center;
     }
 
     .campus-photo.standard {
-      aspect-ratio: 4 / 3; /* Or 1/1, but they want standard cards. 4/3 is very standard. */
+      aspect-ratio: 4 / 3;
     }
 
     .campus-photo img {
@@ -339,20 +338,15 @@
 
     @media (max-width: 1024px) {
       .campus-grid { grid-template-columns: 1fr; gap: 64px; }
-      .campus-photo.hero { aspect-ratio: 16 / 9; }
+      .campus-gallery-six { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
       .team-grid { grid-template-columns: 1fr; }
       .values-grid { grid-template-columns: 1fr; }
       .about-journey-inner { flex-direction: column; align-items: flex-start; }
-      .campus-gallery {
-        grid-template-columns: 1fr;
-      }
-      .campus-photo.hero, .campus-photo.standard {
-        aspect-ratio: 16 / 10;
-        grid-column: 1 / -1;
-      }
+      .campus-gallery-six { grid-template-columns: 1fr; }
+      .campus-photo.standard, .campus-photo.hero-only { aspect-ratio: 16 / 10; }
     }
 
     .about-journey {
@@ -553,10 +547,10 @@
     </div>
   </section>
 
-  <!-- CAMPUS -->
-  <section>
+  <!-- CAMPUS INFO -->
+  <section id="campus">
     <div class="container">
-      <div class="campus-grid">
+      <div class="campus-grid" style="align-items: center;">
         <div>
           <div class="section-header left">
             <span class="section-label">Our Campus</span>
@@ -593,22 +587,41 @@
             <a href="index.html#contact" class="btn btn-gold">Book a Consultation</a>
           </div>
         </div>
-        <div class="campus-gallery" aria-label="Aurelius campus gallery">
-          <div class="campus-photo hero">
-            <img src="gallery/image.png" alt="Aurelius Academy engaged learning session" loading="lazy" />
+        <div class="campus-hero-container">
+          <div class="campus-photo hero-only">
+            <img src="gallery/image.png" alt="Aurelius Academy campus hero" loading="lazy" />
           </div>
-          <div class="campus-photo standard">
-            <img src="gallery/campus4.png" alt="Aurelius Academy classroom" loading="lazy" />
-          </div>
-          <div class="campus-photo standard">
-            <img src="gallery/campus5.png" alt="Aurelius Academy library and study area" loading="lazy" />
-          </div>
-          <div class="campus-photo standard">
-            <img src="gallery/campus2.png" alt="Aurelius Academy counseling room" loading="lazy" />
-          </div>
-          <div class="campus-photo standard">
-            <img src="gallery/campus3.png" alt="Aurelius Academy student discussion and mentoring" loading="lazy" />
-          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS LIFE GALLERY -->
+  <section id="campus-life" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header center" style="margin-bottom: 56px;">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">Campus Life</h2>
+        <div class="section-divider" style="margin: 24px auto 0;"></div>
+      </div>
+      <div class="campus-gallery-six" aria-label="Aurelius campus life gallery">
+        <div class="campus-photo standard">
+          <img src="gallery/campus4.png" alt="Aurelius Academy classroom" loading="lazy" />
+        </div>
+        <div class="campus-photo standard">
+          <img src="gallery/campus5.png" alt="Aurelius Academy library and study area" loading="lazy" />
+        </div>
+        <div class="campus-photo standard">
+          <img src="gallery/campus2.png" alt="Aurelius Academy counseling room" loading="lazy" />
+        </div>
+        <div class="campus-photo standard">
+          <img src="gallery/campus3.png" alt="Aurelius Academy student discussion and mentoring" loading="lazy" />
+        </div>
+        <div class="campus-photo standard">
+          <img src="gallery/home.png" alt="Aurelius Academy modern campus interior" loading="lazy" />
+        </div>
+        <div class="campus-photo standard">
+          <img src="gallery/image.png" alt="Aurelius Academy engaged learning session" loading="lazy" />
         </div>
       </div>
     </div>
