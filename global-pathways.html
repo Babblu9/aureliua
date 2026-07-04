@@ -36,6 +36,13 @@
     .timeline-month { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); padding-top: 2px; }
     .timeline-content h4 { font-family: 'Poppins', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
     .timeline-content p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+    
+    /* UI Consistency Fixes */
+    .region-section[style*="background:var(--cream)"] .requirements-box { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .region-section[style*="background:var(--cream)"] .uni-detail-card { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .region-section:not([style*="background:var(--cream)"]) .uni-detail-card { background: var(--cream); }
+    .uni-detail-card { border: 1px solid var(--border); }
+    
     @media (max-width: 768px) {
       .region-nav { flex-wrap: wrap; }
       .timeline-item { grid-template-columns: 1fr; gap: 4px; }
