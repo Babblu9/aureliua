@@ -59,6 +59,169 @@
       .offerings-table-wrap { overflow-x: auto; }
       .offerings-table { min-width: 820px; }
     }
+
+    /* ── AuSAT Section ───────────────────────────── */
+    .ausat-section { background: var(--navy); padding: 80px 0; }
+    .ausat-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,168,67,0.25);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 56px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ausat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,67,0.2) 100%);
+    }
+    /* Left column */
+    .ausat-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,168,67,0.12);
+      border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 22px;
+    }
+    .ausat-wordmark {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .ausat-au { color: var(--gold); }
+    .ausat-sat { color: #fff; }
+    .ausat-fullname {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 28px;
+    }
+    .ausat-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 24px;
+      border-radius: 2px;
+    }
+    .ausat-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .ausat-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--gold-light);
+      margin: 24px 0 28px;
+      border-left: 3px solid var(--gold);
+      padding-left: 16px;
+    }
+    .ausat-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .ausat-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+    /* Right column */
+    .ausat-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .ausat-pillar {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .ausat-pillar:hover { border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.06); }
+    .ausat-pillar-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(212,168,67,0.14);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ausat-pillar-icon svg { width: 20px; height: 20px; }
+    .ausat-pillar-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.3;
+    }
+    .ausat-outcome {
+      background: rgba(212,168,67,0.08);
+      border: 1px solid rgba(212,168,67,0.25);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .ausat-outcome-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(212,168,67,0.18);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ausat-outcome-icon svg { width: 20px; height: 20px; }
+    .ausat-outcome-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .ausat-outcome-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .ausat-card { grid-template-columns: 1fr; gap: 40px; padding: 36px 28px; }
+    }
+    @media (max-width: 600px) {
+      .ausat-pillars { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -145,22 +308,7 @@
         </ul>
       </div>
 
-      <div class="pathway-card navy-accent" id="aurelius-ausat">
-        <div class="pathway-header">
-          <div class="pathway-icon"><i data-lucide="graduation-cap"></i></div>
-          <div class="pathway-title">AUSAT</div>
-        </div>
-        <p class="pathway-desc">Targeted preparation for the Ashoka University Scholarship Aptitude Test — a competitive scholarship exam that tests verbal reasoning, quantitative aptitude, and analytical ability for merit-based financial awards.</p>
-        <div class="pathway-section-title">Includes</div>
-        <ul class="pathway-list">
-          <li>Verbal Reasoning</li>
-          <li>Quantitative Aptitude</li>
-          <li>Analytical Ability</li>
-          <li>Full-Length Mock Tests</li>
-          <li>Performance Analysis</li>
-          <li>Scholarship Strategy</li>
-        </ul>
-      </div>
+
 
       <div class="pathway-card navy-accent" id="aurelius-global">
         <div class="pathway-header">
@@ -188,7 +336,6 @@
             <th>Aurelius Scholars</th>
             <th>Aurelius Signature</th>
             <th>AP Exams</th>
-            <th>AUSAT</th>
             <th>Aurelius Global</th>
           </tr>
         </thead>
@@ -198,7 +345,6 @@
             <td>Students focused on SAT, IELTS, diagnostics, and test readiness.</td>
             <td>Students needing complete university admissions strategy and counselling.</td>
             <td>Students preparing for subject-specific Advanced Placement exams.</td>
-            <td>Students targeting scholarship opportunities at Ashoka University.</td>
             <td>Students seeking a two-year integrated academic and admissions pathway.</td>
           </tr>
           <tr>
@@ -206,7 +352,6 @@
             <td>Test preparation and performance improvement.</td>
             <td>Profile, shortlist, essays, applications, and interviews.</td>
             <td>Concept clarity, practice assessments, and AP exam strategy.</td>
-            <td>Verbal, quantitative, and analytical reasoning for merit-based awards.</td>
             <td>Intermediate education with SAT, IELTS, AP, profile, and admissions support.</td>
           </tr>
           <tr>
@@ -214,11 +359,56 @@
             <td>Strategy sessions and performance reviews.</td>
             <td>Admissions counselling and application guidance.</td>
             <td>Academic mentoring for AP subject depth.</td>
-            <td>Scholarship strategy and mock test performance reviews.</td>
             <td>Ongoing academic and mentorship support.</td>
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- AuSAT SPECIAL SECTION -->
+<section class="ausat-section" id="ausat">
+  <div class="container">
+    <div class="ausat-card">
+      <div class="ausat-left">
+        <div class="ausat-badge">Official Student Assessment</div>
+        <div class="ausat-wordmark"><span class="ausat-au">Au</span><span class="ausat-sat">SAT</span></div>
+        <div class="ausat-fullname">Aurelius Scholastic Aptitude Test</div>
+        <div class="ausat-divider"></div>
+        <p class="ausat-desc">AuSAT is the official student assessment of Aurelius Academy, designed to evaluate aptitude, reasoning ability, academic readiness, and learning potential.</p>
+        <p class="ausat-desc">The assessment helps students better understand their strengths and enables Aurelius mentors to recommend the most appropriate academic pathways, preparation programs, and university admissions strategies.</p>
+        <p class="ausat-desc">Whether a student is exploring SAT, IELTS, AP Exams, IPMAT, profile building, or international admissions opportunities, AuSAT serves as the starting point for a personalized Aurelius journey.</p>
+        <div class="ausat-tagline">The First Step Towards Becoming an Aurelius Scholar.</div>
+        <a href="index.html#contact" class="ausat-cta">Register for AuSAT &rarr;</a>
+      </div>
+      <div class="ausat-right">
+        <div class="ausat-pillars">
+          <div class="ausat-pillar">
+            <div class="ausat-pillar-icon"><i data-lucide="brain"></i></div>
+            <div class="ausat-pillar-label">Aptitude &amp; Reasoning</div>
+          </div>
+          <div class="ausat-pillar">
+            <div class="ausat-pillar-icon"><i data-lucide="book-open"></i></div>
+            <div class="ausat-pillar-label">Academic Readiness</div>
+          </div>
+          <div class="ausat-pillar">
+            <div class="ausat-pillar-icon"><i data-lucide="lightbulb"></i></div>
+            <div class="ausat-pillar-label">Learning Potential</div>
+          </div>
+          <div class="ausat-pillar">
+            <div class="ausat-pillar-icon"><i data-lucide="compass"></i></div>
+            <div class="ausat-pillar-label">Pathway Recommendation</div>
+          </div>
+        </div>
+        <div class="ausat-outcome">
+          <div class="ausat-outcome-icon"><i data-lucide="star"></i></div>
+          <div>
+            <div class="ausat-outcome-title">Personalised Aurelius Report</div>
+            <div class="ausat-outcome-sub">Every student receives a detailed assessment report with mentor-recommended pathways tailored to their strengths and goals.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -235,7 +425,6 @@
           <span class="cta-badge">Aurelius Scholars</span>
           <span class="cta-badge">Aurelius Signature</span>
           <span class="cta-badge">AP Exams</span>
-          <span class="cta-badge">AUSAT</span>
           <span class="cta-badge">Aurelius Global</span>
         </div>
       </div>
@@ -272,8 +461,8 @@
           <li><a href="#aurelius-scholars">Aurelius Scholars</a></li>
           <li><a href="#aurelius-signature">Aurelius Signature</a></li>
           <li><a href="#aurelius-ap-excellence">Aurelius AP Exams</a></li>
-          <li><a href="#aurelius-ausat">AUSAT</a></li>
           <li><a href="#aurelius-global">Aurelius Global</a></li>
+          <li><a href="#ausat">AuSAT</a></li>
         </ul>
       </div>
       <div class="footer-col">
