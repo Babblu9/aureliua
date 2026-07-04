@@ -27,18 +27,29 @@
   <style>
     .fade-card { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade-card.visible { opacity: 1; transform: translateY(0); }
-    .region-nav { display: flex; gap: 12px; justify-content: center; padding: 32px 0; background: var(--cream); border-bottom: 1px solid var(--border); }
-    .region-nav a { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-mid); border: 1.5px solid var(--border); padding: 10px 24px; border-radius: 4px; transition: all var(--ease); }
-    .region-nav a:hover, .region-nav a.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .timeline { display: flex; flex-direction: column; gap: 0; }
-    .timeline-item { display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--border); align-items: start; }
-    .timeline-item:last-child { border-bottom: none; }
-    .timeline-month { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); padding-top: 2px; }
-    .timeline-content h4 { font-family: 'Poppins', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-    .timeline-content p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
-    @media (max-width: 768px) {
-      .region-nav { flex-wrap: wrap; }
-      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+    
+    /* Pathway Card Styles */
+    .offerings-section { background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%); padding: 80px 0 100px; }
+    .pathway-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+    .pathway-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 34px 30px 30px; display: flex; flex-direction: column; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(27,40,96,0.06); transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease); }
+    .pathway-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; height: 4px; background: var(--gold); transform: none; }
+    .pathway-card:hover { background: var(--white); border-color: rgba(184,137,42,0.35); box-shadow: 0 18px 48px rgba(27,40,96,0.12); transform: translateY(-4px); }
+    .pathway-card.navy-accent::before { background: var(--navy); }
+    .pathway-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+    .pathway-icon { width: 54px; height: 54px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pathway-card.gold-accent .pathway-icon { background: rgba(212,168,67,0.1); color: var(--gold); }
+    .pathway-card.navy-accent .pathway-icon { background: rgba(27,40,96,0.08); color: var(--navy); }
+    .pathway-icon svg { width: 26px; height: 26px; }
+    .pathway-title { font-family: var(--font-serif); font-size: clamp(1.45rem, 2.4vw, 1.75rem); font-weight: 600; color: var(--navy); line-height: 1.16; }
+    .pathway-card .pathway-desc { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 22px; text-wrap: pretty; }
+    .pathway-section-title { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); margin-bottom: 12px; }
+    .pathway-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 0; padding: 0; list-style: none; }
+    .pathway-list li { min-height: 38px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--cream); font-size: 0.8rem; color: var(--text-mid); display: flex; align-items: center; gap: 8px; line-height: 1.4; }
+    .pathway-list li::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    
+    @media (max-width: 900px) {
+      .pathway-split { grid-template-columns: 1fr; }
+      .pathway-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -69,371 +80,104 @@
   <p class="page-hero-sub">Our regional specialists know the application systems, deadlines, scholarship structures, and cultural expectations of universities across Europe, the Americas, and Asia-Pacific.</p>
 </div>
 
-<!-- REGION NAV -->
-<div class="region-nav">
-  <a href="#europe" class="active"><i data-lucide="globe"></i> Europe</a>
-  <a href="#americas"><i data-lucide="globe"></i> Americas</a>
-  <a href="#asia"><i data-lucide="globe"></i> Asia-Pacific</a>
-</div>
-
-<!-- EUROPE -->
-<section class="region-section" id="europe">
+<!-- REGIONS GRID -->
+<section class="offerings-section">
   <div class="container">
-    <div class="region-header">
-      <div>
-        <div class="region-flag"><i data-lucide="globe"></i></div>
-        <span class="region-tag">Europe</span>
-        <h2>United Kingdom &amp; Europe</h2>
-        <p>The UK remains the single most sought-after destination for Indian students seeking an undergraduate degree abroad. Oxford, Cambridge, LSE, UCL, and Imperial collectively attract tens of thousands of applicants per cycle. We guide students through UCAS, personal statement writing, and the rigorous interview processes that the most selective UK institutions use.</p>
-        <p>Beyond the UK, Germany, the Netherlands, Ireland, and France offer exceptional university options, many with programmes taught entirely in English and substantially lower tuition fees than US or UK alternatives.</p>
-        <div class="region-highlights">
-          <div class="region-highlight">Personal statement (UCAS) is the single most important document in a UK application. Our coaching produces statements that are specific, evidence-led, and academically credible.</div>
-          <div class="region-highlight">Oxbridge applicants require additional preparation: admissions tests (LNAT, MAT, BMAT, TSA) and multi-day interview processes specific to each college.</div>
-          <div class="region-highlight">German universities (TU Munich, LMU, Heidelberg) are increasingly accessible to Indian students with strong academic records and German language skills.</div>
-          <div class="region-highlight">Dutch universities including TU Delft and Leiden offer English-taught programmes with competitive global rankings and manageable tuition costs.</div>
-        </div>
-      </div>
-      <div>
-        <div class="requirements-box">
-          <h3>UK Entry Requirements</h3>
-          <div class="req-grid">
-            <div class="req-item">
-              <h4>English Language</h4>
-              <p>IELTS 6.5–7.5 overall (7.0+ for Oxbridge and top London universities). No band below 6.0–6.5.</p>
-            </div>
-            <div class="req-item">
-              <h4>Academic Grades</h4>
-              <p>Predicted grades assessed from Grade 11 and 12 results. A* equivalents needed for Oxbridge entry.</p>
-            </div>
-            <div class="req-item">
-              <h4>Admissions Tests</h4>
-              <p>Oxford and Cambridge require subject-specific tests. LSE requires a separate application and some course tests.</p>
-            </div>
+    <div class="pathway-split">
+      
+      <!-- Americas -->
+      <div class="pathway-card gold-accent">
+        <div class="pathway-header">
+          <div class="pathway-icon"><i data-lucide="globe"></i></div>
+          <div>
+            <div class="pathway-section-title">Americas</div>
+            <h2 class="pathway-title">United States &amp; Canada</h2>
           </div>
         </div>
-        <div class="requirements-box" style="margin-top:20px">
-          <h3>Application Timeline: UK (UCAS)</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-month">Sep – Oct</div>
-              <div class="timeline-content"><h4>UCAS Application Opens</h4><p>Oxford and Cambridge deadline: 15 October. All other universities: 31 January.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Oct – Nov</div>
-              <div class="timeline-content"><h4>Admissions Tests</h4><p>LNAT, MAT, BMAT, TSA taken in October/November depending on subject and university.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Dec – Jan</div>
-              <div class="timeline-content"><h4>Interviews</h4><p>Oxbridge interviews held in December. Other universities may interview in January.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Mar – May</div>
-              <div class="timeline-content"><h4>Offers and Decisions</h4><p>Conditional offers received. Final decisions made after Grade 12 results in July.</p></div>
-            </div>
-          </div>
-        </div>
+        <p class="pathway-desc" style="font-family: var(--font-serif); font-style: italic; color: var(--gold); margin-bottom: 12px; font-weight: 600;">North America’s Leading Universities</p>
+        <p class="pathway-desc">Explore research universities, liberal arts colleges, and Ivy League institutions across the United States and Canada.</p>
+        <ul class="pathway-list" style="margin-bottom: 24px;">
+          <li>Harvard</li>
+          <li>MIT</li>
+          <li>Stanford</li>
+          <li>Columbia</li>
+          <li>UBC</li>
+          <li>U of Toronto</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-outline-gold" style="margin-top: auto; align-self: flex-start;">Explore Americas &rarr;</a>
       </div>
-    </div>
 
-    <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--navy);margin-bottom:28px">Key Universities: Europe</h3>
-    <div class="universities-detail-grid">
-      <div class="uni-detail-card">
-        <span class="uni-type">UK ·Russell Group</span>
-        <h4>University of Oxford</h4>
-        <div class="uni-location">Oxford, England</div>
-        <p>Collegiate university with tutorial-based teaching. Among the most selective universities in the world. Requires subject-specific admissions tests and college interviews for most courses.</p>
+      <!-- Europe -->
+      <div class="pathway-card navy-accent">
+        <div class="pathway-header">
+          <div class="pathway-icon"><i data-lucide="map"></i></div>
+          <div>
+            <div class="pathway-section-title">Europe</div>
+            <h2 class="pathway-title">United Kingdom &amp; Europe</h2>
+          </div>
+        </div>
+        <p class="pathway-desc" style="font-family: var(--font-serif); font-style: italic; color: var(--gold); margin-bottom: 12px; font-weight: 600;">Historic Excellence. Global Influence.</p>
+        <p class="pathway-desc">Admissions guidance for Oxford, Cambridge, Imperial, LSE, ETH Zurich, TU Munich, and other leading European universities.</p>
+        <ul class="pathway-list" style="margin-bottom: 24px;">
+          <li>Oxford</li>
+          <li>Cambridge</li>
+          <li>Imperial</li>
+          <li>LSE</li>
+          <li>ETH Zurich</li>
+          <li>TU Munich</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-outline-navy" style="margin-top: auto; align-self: flex-start;">Explore Europe &rarr;</a>
       </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">UK ·Russell Group</span>
-        <h4>University of Cambridge</h4>
-        <div class="uni-location">Cambridge, England</div>
-        <p>Strong across sciences, mathematics, engineering, law, and economics. Supervision system provides intensive academic mentoring. STEM applicants should also prepare for STEP mathematics.</p>
+
+      <!-- Asia-Pacific -->
+      <div class="pathway-card gold-accent">
+        <div class="pathway-header">
+          <div class="pathway-icon"><i data-lucide="compass"></i></div>
+          <div>
+            <div class="pathway-section-title">Asia-Pacific</div>
+            <h2 class="pathway-title">Asia-Pacific</h2>
+          </div>
+        </div>
+        <p class="pathway-desc" style="font-family: var(--font-serif); font-style: italic; color: var(--gold); margin-bottom: 12px; font-weight: 600;">Innovation Across the East</p>
+        <p class="pathway-desc">Strategic pathways to world-class universities in Singapore, Hong Kong, Japan, Australia, and New Zealand.</p>
+        <ul class="pathway-list" style="margin-bottom: 24px;">
+          <li>NUS</li>
+          <li>NTU</li>
+          <li>HKU</li>
+          <li>Melbourne</li>
+          <li>ANU</li>
+          <li>Waseda</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-outline-gold" style="margin-top: auto; align-self: flex-start;">Explore Asia-Pacific &rarr;</a>
       </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">UK ·Russell Group</span>
-        <h4>London School of Economics</h4>
-        <div class="uni-location">London, England</div>
-        <p>Specialists in economics, social sciences, law, and management. Strong alumni network and exceptional proximity to London's financial sector. Highly competitive for Economics and Law.</p>
+
+      <!-- India -->
+      <div class="pathway-card navy-accent">
+        <div class="pathway-header">
+          <div class="pathway-icon"><i data-lucide="map-pin"></i></div>
+          <div>
+            <div class="pathway-section-title">India</div>
+            <h2 class="pathway-title">Indian Universities</h2>
+          </div>
+        </div>
+        <p class="pathway-desc" style="font-family: var(--font-serif); font-style: italic; color: var(--gold); margin-bottom: 12px; font-weight: 600;">Global Standards. Indian Opportunities.</p>
+        <p class="pathway-desc">Several leading Indian universities accept SAT scores for undergraduate admissions, providing internationally aligned pathways within India.</p>
+        <ul class="pathway-list" style="margin-bottom: 24px;">
+          <li>Ashoka</li>
+          <li>Plaksha</li>
+          <li>Krea</li>
+          <li>FLAME</li>
+          <li>Shiv Nadar</li>
+          <li>Ahmedabad</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-outline-navy" style="margin-top: auto; align-self: flex-start;">Explore India &rarr;</a>
       </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">UK ·Russell Group</span>
-        <h4>Imperial College London</h4>
-        <div class="uni-location">London, England</div>
-        <p>Specialises in science, engineering, medicine, and business. Consistently ranked among Europe's top universities for STEM disciplines. Strong graduate employment outcomes.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">UK ·Russell Group</span>
-        <h4>UCL</h4>
-        <div class="uni-location">London, England</div>
-        <p>Broad range of disciplines. Particularly strong in architecture, pharmacy, law, engineering, and the social sciences. Large international student community in central London.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Germany ·TU9</span>
-        <h4>TU Munich</h4>
-        <div class="uni-location">Munich, Germany</div>
-        <p>Germany's top technical university. Engineering, computer science, and natural sciences programmes available in English. Lower tuition fees than UK/US institutions. Strong industry ties.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Netherlands</span>
-        <h4>TU Delft</h4>
-        <div class="uni-location">Delft, Netherlands</div>
-        <p>Europe's largest technical university. Architecture, engineering, and aerospace programmes in English. Competitive entry with portfolio requirements for design-based courses.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Ireland</span>
-        <h4>Trinity College Dublin</h4>
-        <div class="uni-location">Dublin, Ireland</div>
-        <p>Ireland's oldest and most prestigious university. Strong in computer science, law, business, and medicine. EU location provides post-Brexit advantages for some students.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">France ·Grande École</span>
-        <h4>Sciences Po Paris</h4>
-        <div class="uni-location">Paris, France</div>
-        <p>Premier institution for international affairs, political science, and economics. Several programmes taught entirely in English. Unique admissions process requiring a written essay and oral interview.</p>
-      </div>
+      
     </div>
   </div>
 </section>
 
-<!-- AMERICAS -->
-<section class="region-section" id="americas" style="background:var(--cream)">
-  <div class="container">
-    <div class="region-header">
-      <div>
-        <div class="region-flag"><i data-lucide="globe"></i></div>
-        <span class="region-tag">Americas</span>
-        <h2>United States &amp; Canada</h2>
-        <p>US university admissions are holistic: grades and test scores matter, but essays, extracurriculars, letters of recommendation, and demonstrated interest are weighted alongside academic performance. Our counsellors understand this system in granular detail and guide students through every component.</p>
-        <p>Canadian universities offer rigorous academics, strong post-graduation work pathways, and a welcoming environment for international students. University of Toronto and UBC consistently rank among the world's top 40 universities.</p>
-        <div class="region-highlights">
-          <div class="region-highlight">The Common Application is used by over 1,000 US universities. A single main essay plus institution-specific supplements ranging from 50 to 650 words each.</div>
-          <div class="region-highlight">SAT scores above 1500 are competitive for top-30 universities. Several elite institutions are now test-optional, but strong scores still strengthen applications significantly.</div>
-          <div class="region-highlight">Early Decision and Early Action deadlines (November 1–15) improve admission odds at most universities and are the right strategy for students with a clear first choice.</div>
-          <div class="region-highlight">Canadian universities use a more grades-focused admissions process. UBC and University of Toronto admit students primarily on Grade 12 predicted and final results.</div>
-        </div>
-      </div>
-      <div>
-        <div class="requirements-box">
-          <h3>US Entry Requirements</h3>
-          <div class="req-grid">
-            <div class="req-item">
-              <h4>Standardised Tests</h4>
-              <p>SAT or ACT. Top universities expect 1480–1580 SAT. Many are test-optional but scores above the median strengthen applications.</p>
-            </div>
-            <div class="req-item">
-              <h4>English Language</h4>
-              <p>TOEFL 100+ or IELTS 7.0+ required for non-native English speakers. Some universities accept Duolingo English Test.</p>
-            </div>
-            <div class="req-item">
-              <h4>Application Components</h4>
-              <p>Transcripts, test scores, personal essay, supplemental essays, 2 teacher letters of recommendation, counsellor letter.</p>
-            </div>
-          </div>
-        </div>
-        <div class="requirements-box" style="margin-top:20px">
-          <h3>Application Timeline: USA</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-month">Aug – Sep</div>
-              <div class="timeline-content"><h4>Common App Opens</h4><p>Start essays, build activity list, request letters of recommendation from teachers.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Nov 1–15</div>
-              <div class="timeline-content"><h4>Early Decision / Action</h4><p>ED is binding. EA is non-binding. Both significantly improve admission rates at most universities.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Jan 1</div>
-              <div class="timeline-content"><h4>Regular Decision Deadline</h4><p>Most universities. Some have December 15 or January 15 deadlines. Check each institution individually.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Mar – Apr</div>
-              <div class="timeline-content"><h4>Decisions Released</h4><p>Regular Decision results arrive. National Decision Day (May 1) is the final deadline to commit.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--navy);margin-bottom:28px">Key Universities: Americas</h3>
-    <div class="universities-detail-grid">
-      <div class="uni-detail-card">
-        <span class="uni-type">USA ·Ivy League</span>
-        <h4>Harvard University</h4>
-        <div class="uni-location">Cambridge, Massachusetts</div>
-        <p>Acceptance rate under 4%. Holistic admissions weighing academics, character, and contribution. Strong in liberal arts, law, medicine, and business. Substantial financial aid for international students.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">USA ·MIT</span>
-        <h4>Massachusetts Institute of Technology</h4>
-        <div class="uni-location">Cambridge, Massachusetts</div>
-        <p>The world's foremost technical university. Engineering, computer science, physics, mathematics, and management. Independent application process (not Common App). Highly values research experience and maker culture.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">USA ·Top 5</span>
-        <h4>Stanford University</h4>
-        <div class="uni-location">Palo Alto, California</div>
-        <p>Exceptional for computer science, engineering, entrepreneurship, and humanities. Proximity to Silicon Valley creates unparalleled internship and startup opportunities. Under 4% acceptance rate.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">USA ·Ivy League</span>
-        <h4>Columbia University</h4>
-        <div class="uni-location">New York City, New York</div>
-        <p>Urban campus in Manhattan. Strong journalism, business, law, and pre-med programmes. Core Curriculum gives all undergraduates a shared foundation in Western literature, philosophy, and science.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">USA ·Top 10</span>
-        <h4>Carnegie Mellon University</h4>
-        <div class="uni-location">Pittsburgh, Pennsylvania</div>
-        <p>Globally ranked for computer science, robotics, drama, and fine arts. School of Computer Science is consistently the best or second-best in the world. Strong co-op and research programmes.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">USA ·Public Ivy</span>
-        <h4>UC Berkeley</h4>
-        <div class="uni-location">Berkeley, California</div>
-        <p>One of the world's great public research universities. Top-ranked for engineering, computer science, chemistry, and economics. Lower tuition than private peers while maintaining elite academic standards.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Canada ·U15</span>
-        <h4>University of Toronto</h4>
-        <div class="uni-location">Toronto, Ontario</div>
-        <p>Canada's leading research university. Grades-focused admissions make it more predictable than US holistic systems. Strong medicine, engineering, computer science, and life sciences programmes.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Canada ·U15</span>
-        <h4>University of British Columbia</h4>
-        <div class="uni-location">Vancouver, British Columbia</div>
-        <p>Consistently ranked among the world's top 40 universities. Exceptional natural setting, strong sciences, engineering, commerce, and arts programmes. Vancouver's quality of life is a significant draw.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Canada ·U15</span>
-        <h4>McGill University</h4>
-        <div class="uni-location">Montreal, Quebec</div>
-        <p>Known as the Harvard of Canada. Strong in medicine, law, and sciences. Bilingual city with a vibrant student culture. Competitive entry, particularly for medicine and engineering.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ASIA-PACIFIC -->
-<section class="region-section" id="asia">
-  <div class="container">
-    <div class="region-header">
-      <div>
-        <div class="region-flag"><i data-lucide="globe"></i></div>
-        <span class="region-tag">Asia-Pacific</span>
-        <h2>Asia &amp; Australia</h2>
-        <p>Singapore has emerged as one of the world's premier destinations for higher education. NUS and NTU are consistently ranked in the top 15 globally and offer a unique bridge between Asian business networks and Western academic standards. Proximity to India, lower travel costs, and strong post-graduation employment opportunities make Singapore an increasingly popular choice.</p>
-        <p>Australia's Group of Eight universities offer research-intensive education with strong graduate outcomes. Hong Kong, Japan, and South Korea are also growing destinations for ambitious Indian students who want to combine a quality education with a distinctive cultural experience.</p>
-        <div class="region-highlights">
-          <div class="region-highlight">NUS and NTU both require SAT or A-level scores alongside strong Grade 12 results. IELTS 6.5–7.0 is typically required for non-native English speakers.</div>
-          <div class="region-highlight">Australian universities use a more straightforward admissions process based primarily on Grade 12 results converted to an ATAR equivalent for international students.</div>
-          <div class="region-highlight">Hong Kong universities use a separate admissions portal (JUPAS for locals, direct applications for internationals) and require strong HKDSE or international qualification equivalents.</div>
-          <div class="region-highlight">Waseda and Keio in Japan offer English-taught programmes with competitive scholarships for international students through the MEXT government scholarship programme.</div>
-        </div>
-      </div>
-      <div>
-        <div class="requirements-box">
-          <h3>Singapore Entry Requirements</h3>
-          <div class="req-grid">
-            <div class="req-item">
-              <h4>Academic Qualifications</h4>
-              <p>Grade 12 results plus SAT (1400+ recommended) or A-levels. NUS Engineering requires strong Mathematics and Physics performance.</p>
-            </div>
-            <div class="req-item">
-              <h4>English Language</h4>
-              <p>IELTS 6.5 overall for most programmes. Some competitive courses require 7.0. NUS Business School may require higher thresholds.</p>
-            </div>
-            <div class="req-item">
-              <h4>Portfolio/Interview</h4>
-              <p>Architecture and design programmes require a portfolio. Some courses require an interview or personal statement equivalent.</p>
-            </div>
-          </div>
-        </div>
-        <div class="requirements-box" style="margin-top:20px">
-          <h3>Application Timeline: Singapore</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-month">Oct – Dec</div>
-              <div class="timeline-content"><h4>Applications Open</h4><p>NUS and NTU applications open for the following academic year. Gather documents, write personal statement equivalent.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Feb – Mar</div>
-              <div class="timeline-content"><h4>Application Deadline</h4><p>Most NUS and NTU programmes close in February or March. Submit all required documents by the stated deadline.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Apr – May</div>
-              <div class="timeline-content"><h4>Outcomes and Scholarships</h4><p>Admission outcomes released. ASEAN Scholarships and other financial aid packages announced alongside offers.</p></div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-month">Aug</div>
-              <div class="timeline-content"><h4>Enrolment</h4><p>Academic year begins in August. Pre-departure orientation and housing applications typically open in June.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--navy);margin-bottom:28px">Key Universities: Asia-Pacific</h3>
-    <div class="universities-detail-grid">
-      <div class="uni-detail-card">
-        <span class="uni-type">Singapore ·Top 15 Global</span>
-        <h4>National University of Singapore</h4>
-        <div class="uni-location">Singapore</div>
-        <p>Asia's top university. Exceptional computing, engineering, business, medicine, and law programmes. Strong industry connections across Southeast Asia and globally. Merit scholarships available for outstanding students.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Singapore ·Top 15 Global</span>
-        <h4>Nanyang Technological University</h4>
-        <div class="uni-location">Singapore</div>
-        <p>Ranked among the world's best young universities. Strong in engineering, business, and teacher education. NTU's campus is consistently rated one of the most beautiful in Asia.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Australia ·Group of Eight</span>
-        <h4>University of Melbourne</h4>
-        <div class="uni-location">Melbourne, Australia</div>
-        <p>Australia's highest-ranked university. Uses the Melbourne Model for undergraduate education: broad undergraduate degrees followed by specialist graduate programmes. Strong medicine, law, and sciences.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Australia ·Group of Eight</span>
-        <h4>Australian National University</h4>
-        <div class="uni-location">Canberra, Australia</div>
-        <p>Australia's national research university. Particularly strong in policy, international relations, sciences, and law. Location in the capital provides unique access to government and diplomatic institutions.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Australia ·Group of Eight</span>
-        <h4>University of Sydney</h4>
-        <div class="uni-location">Sydney, Australia</div>
-        <p>Australia's oldest university. Strong across medicine, law, architecture, and the arts. Sydney campus is architecturally iconic. Large international student community with strong Indian student associations.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Hong Kong ·Top 30 Global</span>
-        <h4>University of Hong Kong</h4>
-        <div class="uni-location">Hong Kong</div>
-        <p>Asia's international university. Strong in medicine, law, business, and architecture. Hong Kong's legal and financial systems create distinctive career pathways for graduates in those fields.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Japan</span>
-        <h4>Waseda University</h4>
-        <div class="uni-location">Tokyo, Japan</div>
-        <p>Japan's most internationally oriented private university. Several undergraduate programmes taught entirely in English. Tokyo's position as a global city and Japan's business culture make this an increasingly attractive option.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">South Korea</span>
-        <h4>KAIST</h4>
-        <div class="uni-location">Daejeon, South Korea</div>
-        <p>Korea's leading technical university. Strong computer science, electrical engineering, and life sciences. Tuition-free for undergraduate students in many programmes. Emerging as a destination for STEM-focused students.</p>
-      </div>
-      <div class="uni-detail-card">
-        <span class="uni-type">Hong Kong</span>
-        <h4>HKUST</h4>
-        <div class="uni-location">Hong Kong</div>
-        <p>Business and technology focus. MBA programme consistently ranked among Asia's best. Undergraduate engineering and computer science programmes draw strong international student cohorts.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
 <section class="admissions-cta">
   <div class="container">
     <div class="cta-inner">
