@@ -261,7 +261,7 @@ section { padding: 100px 0; }
 .about-feat-text p { font-size: 0.78rem; color: var(--text-mid); margin: 0; line-height: 1.5; }
 
 /* ─── PROGRAMS ──────────────────────────────────── */
-.programs { background: var(--cream); }
+.programs { background: var(--white); }
 .programs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .programs-grid .program-card.wide { grid-column: span 2; }
 .program-card.wide { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }

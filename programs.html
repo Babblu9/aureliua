@@ -45,7 +45,7 @@
     .pathway-section-title { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); margin-bottom: 12px; }
     .pathway-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 0; }
     .pathway-list li { min-height: 38px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--cream); font-size: 0.8rem; color: var(--text-mid); display: flex; align-items: center; gap: 8px; line-height: 1.4; }
-    .pathway-list li::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .pathway-list li::before { content: '✓'; display: inline-block; color: var(--gold); font-weight: bold; flex-shrink: 0; font-size: 1rem; }
     .offerings-table-wrap { margin-top: 44px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--white); box-shadow: var(--shadow); }
     .offerings-table { width: 100%; border-collapse: collapse; }
     .offerings-table th { background: var(--navy); color: var(--white); padding: 18px 16px; text-align: left; font-family: var(--font-serif); font-size: 1.18rem; font-weight: 600; line-height: 1.2; }
@@ -402,7 +402,7 @@
 
       <div class="pathway-card gold-accent" id="aurelius-leaders" onclick="window.location.href='index.html#contact'" style="cursor: pointer;">
         <div class="pathway-header">
-          <div class="pathway-icon"><i data-lucide="book-open"></i></div>
+          <div class="pathway-icon"><i data-lucide="target"></i></div>
           <div class="pathway-title">Aurelius Leaders</div>
         </div>
         <p class="pathway-desc">A dedicated program for students aiming for the Integrated Programme in Management (IPM) at leading IIMs and other premier management institutions, offering rigorous aptitude preparation.</p>
@@ -437,9 +437,12 @@
       </div>
     </div>
 
-    <div style="margin-bottom: 32px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
-      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--navy); margin-bottom: 16px;">Aurelius Global: The Complete Ecosystem</h3>
-      <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Aurelius Global is our most comprehensive offering. Unlike modular programs that focus on single aspects of preparation, Aurelius Global provides a fully integrated two-year journey. It combines high school intermediate education with rigorous standardized test preparation, profile building, and end-to-end university admissions counseling into one unified pathway.</p>
+    <div style="margin-bottom: 56px; max-width: 900px; margin-left: auto; margin-right: auto; text-align: center; background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); border: 1px solid var(--gold); border-radius: 16px; padding: 56px 40px; box-shadow: 0 16px 40px rgba(15, 25, 64, 0.25);">
+      <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgba(184, 137, 42, 0.15); border-radius: 50%; margin-bottom: 24px; color: var(--gold-light);">
+        <i data-lucide="crown" style="width: 32px; height: 32px;"></i>
+      </div>
+      <h3 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--white); margin-bottom: 16px;">Aurelius Global: The Complete Ecosystem</h3>
+      <p style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7; max-width: 700px; margin: 0 auto;">Aurelius Global is our most comprehensive offering. Unlike modular programs that focus on single aspects of preparation, Aurelius Global provides a fully integrated two-year journey. It combines high school intermediate education with rigorous standardized test preparation, profile building, and end-to-end university admissions counseling into one unified pathway.</p>
     </div>
 
     <div class="offerings-table-wrap">
