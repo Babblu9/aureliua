@@ -17,6 +17,7 @@ def main():
         idx_content = f.read()
 
     # Extract all sections from index.html
+    head_section = idx_content[:idx_content.find('<!-- NAVBAR -->')]
     navbar = get_section(idx_content, r'<!-- NAVBAR -->', r'<!-- HERO -->')
     hero = get_section(idx_content, r'<!-- HERO -->', r'<!-- 1 · ABOUT')
     about = get_section(idx_content, r'<!-- 1 · ABOUT', r'<!-- 2 · GLOBAL OUTLOOK')
@@ -32,6 +33,7 @@ def main():
 
     # 2. Rebuild index.html
     new_idx_content = (
+        head_section +
         navbar + 
         hero + 
         founder + 
