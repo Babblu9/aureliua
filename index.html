@@ -482,7 +482,7 @@
             <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
             <div class="contact-detail-text">
               <h3>Call Us</h3>
-              <a href="tel:+919121473399">+91 9121473399</a>
+              <a href="tel:+919121473399">+91 91214 73399</a>
             </div>
           </div>
           <div class="contact-detail">
@@ -541,7 +541,7 @@
           <textarea id="message" name="Message" placeholder="Tell us about your goals and any questions you have..."></textarea>
         </div>
         <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send Enquiry</button>
-        <p style="font-size:0.78rem;color:var(--text-mid);margin-top:14px;text-align:center">This opens your email app with the enquiry ready to send. Prefer to talk? Call <a href="tel:+919121473399" style="color:var(--gold);font-weight:600">+91 9121473399</a>.</p>
+        <p style="font-size:0.78rem;color:var(--text-mid);margin-top:14px;text-align:center">This opens your email app with the enquiry ready to send. Prefer to talk? Call <a href="tel:+919121473399" style="color:var(--gold);font-weight:600">+91 91214 73399</a>.</p>
       </form>
     </div>
   </div>
@@ -594,7 +594,7 @@
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon"><i data-lucide="phone"></i></span>
-          <a href="tel:+919121473399">+91 9121473399</a>
+          <a href="tel:+919121473399">+91 91214 73399</a>
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon"><i data-lucide="mail"></i></span>
@@ -612,9 +612,74 @@
   </div>
 </footer>
 
+<!-- SIDE POPUP FORM -->
+<div id="sidePopupOverlay" class="side-popup-overlay"></div>
+<div id="sidePopup" class="side-popup">
+  <button id="closeSidePopup" class="side-popup-close" aria-label="Close form"><i data-lucide="x"></i></button>
+  <div class="side-popup-content">
+    <h3 style="font-family:var(--font-serif); font-size:1.8rem; color:var(--navy); margin-bottom:12px;">Enquire Now</h3>
+    <p style="font-size:0.9rem; color:var(--text-mid); margin-bottom:24px; line-height:1.6;">Start your journey with Aurelius. Fill out the form below and our team will get in touch.</p>
+    <form class="contact-form" action="mailto:info@aureliusacademy.in" method="post" enctype="text/plain" style="padding:0; border:none; background:transparent;">
+      <div class="form-group">
+        <label for="popupName">Name</label>
+        <input type="text" id="popupName" name="Name" placeholder="Your name" required/>
+      </div>
+      <div class="form-group">
+        <label for="popupEmail">Email</label>
+        <input type="email" id="popupEmail" name="Email" placeholder="your@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label for="popupPhone">Phone</label>
+        <input type="tel" id="popupPhone" name="Phone" placeholder="+91 XXXXX XXXXX"/>
+      </div>
+      <div class="form-group">
+        <label for="popupProgram">Program of Interest</label>
+        <select id="popupProgram" name="Program of Interest">
+          <option value="">Select a program</option>
+          <option>SAT</option>
+          <option>IELTS</option>
+          <option>Aurelius AP Excellence</option>
+          <option>Profile Building</option>
+          <option>Admission Guidance</option>
+          <option>Management Pathways</option>
+          <option>University Admissions</option>
+          <option>Global Pathways</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; margin-top:10px;">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js"></script>
-<script>lucide.createIcons();</script>
+<script>
+  lucide.createIcons();
+
+  // Side Popup Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const popupOverlay = document.getElementById('sidePopupOverlay');
+    const sidePopup = document.getElementById('sidePopup');
+    const closeBtn = document.getElementById('closeSidePopup');
+    
+    // Show after 3.5 seconds if not shown in this session
+    if (!sessionStorage.getItem('enquiryPopupShown')) {
+      setTimeout(() => {
+        if (popupOverlay) popupOverlay.classList.add('active');
+        if (sidePopup) sidePopup.classList.add('active');
+        sessionStorage.setItem('enquiryPopupShown', 'true');
+      }, 3500);
+    }
+
+    const closePopup = () => {
+      if (popupOverlay) popupOverlay.classList.remove('active');
+      if (sidePopup) sidePopup.classList.remove('active');
+    };
+
+    if(closeBtn) closeBtn.addEventListener('click', closePopup);
+    if(popupOverlay) popupOverlay.addEventListener('click', closePopup);
+  });
+</script>
 
 </body>
 </html>
