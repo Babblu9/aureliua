@@ -34,6 +34,7 @@
     .pathway-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 34px 30px 30px; display: flex; flex-direction: column; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(27,40,96,0.06); transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease); }
     .pathway-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; height: 4px; background: var(--gold); transform: none; }
     .pathway-card:hover { background: var(--white); border-color: rgba(184,137,42,0.35); box-shadow: 0 18px 48px rgba(27,40,96,0.12); transform: translateY(-4px); }
+    .pathway-card.wide { grid-column: span 2; }
     .pathway-card.navy-accent::before { background: var(--navy); }
     .pathway-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
     .pathway-icon { width: 54px; height: 54px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -55,6 +56,7 @@
     .offerings-table td:first-child { background: var(--cream); color: var(--navy); font-weight: 600; }
     @media (max-width: 900px) {
       .pathway-split { grid-template-columns: 1fr; }
+      .pathway-card.wide { grid-column: span 1; }
       .pathway-list { grid-template-columns: 1fr; }
       .offerings-table-wrap { overflow-x: auto; }
       .offerings-table { min-width: 820px; }
@@ -419,7 +421,7 @@
 
 
 
-      <div class="pathway-card navy-accent" id="aurelius-global" onclick="window.location.href='index.html#contact'" style="cursor: pointer;">
+      <div class="pathway-card navy-accent wide" id="aurelius-global" onclick="window.location.href='index.html#contact'" style="cursor: pointer;">
         <div class="pathway-header">
           <div class="pathway-icon"><i data-lucide="globe"></i></div>
           <div class="pathway-title">Aurelius Global</div>
