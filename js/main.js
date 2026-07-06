@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <option>SAT</option>
           <option>IELTS</option>
           <option>AP Exams</option>
+          <option>IPMAT</option>
+
           <option>Profile Building</option>
           <option>Admissions Guidance</option>
           <option>Management Pathways</option>
