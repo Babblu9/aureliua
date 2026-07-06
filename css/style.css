@@ -269,21 +269,21 @@ section { padding: 100px 0; }
 .program-card-main { display: flex; flex-direction: column; align-items: flex-start; }
 .program-card.wide .program-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 0; }
 .program-card {
-  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius);
   padding: 36px 32px; transition: all var(--ease); position: relative; overflow: hidden;
 }
-.program-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform var(--ease); }
+.program-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; top: auto; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform var(--ease); }
 .program-card:hover::before { transform: scaleX(1); }
-.program-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(27,40,96,0.13); border-color: rgba(184,137,42,0.35); }
-.program-icon { width: 52px; height: 52px; background: var(--gold-pale); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 24px; }
-.program-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: var(--gold-pale); padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 12px; }
-.program-card h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.2; }
-.program-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 24px; }
+.program-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(15,25,64,0.3); border-color: rgba(184,137,42,0.35); background: rgba(255,255,255,0.07); }
+.program-icon { width: 52px; height: 52px; background: rgba(184,137,42,0.15); color: var(--gold-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 24px; }
+.program-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); background: rgba(184,137,42,0.15); padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 12px; }
+.program-card h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+.program-card p { font-size: 0.875rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 24px; }
 .program-features { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
-.program-feat { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-mid); }
+.program-feat { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.75); }
 .program-feat::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-.program-link { font-size: 0.78rem; font-weight: 600; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; transition: gap var(--ease); }
-.program-link:hover { color: var(--gold); gap: 10px; }
+.program-link { font-size: 0.78rem; font-weight: 600; color: var(--gold-light); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; transition: gap var(--ease); }
+.program-link:hover { color: var(--white); gap: 10px; }
 
 /* ─── GLOBAL PATHWAYS PREVIEW ──────────────────── */
 .pathways-preview { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); }
