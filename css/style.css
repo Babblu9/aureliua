@@ -757,3 +757,10 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
     display: none;
   }
 }
+
+@media (max-width: 900px) {
+  .founder-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
