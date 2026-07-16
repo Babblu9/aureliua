@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "aureliua.vercel.app"
+        }
+      ],
+      "destination": "https://www.aureliusacademy.in/$1",
+      "permanent": true
+    }
+  ]
+}
