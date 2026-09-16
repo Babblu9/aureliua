@@ -34,9 +34,9 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+<nav class="navbar navbar-light">
   <a href="index.html" class="nav-logo">
-    <img class="nav-logo-icon" src="logo-icon-light.png" alt="Aurelius"/>
+    <img class="nav-logo-icon" src="logo-icon-dark.png" alt="Aurelius"/>
     <div class="nav-logo-text">
       <span class="nav-logo-name">Aurelius</span>
       <span class="nav-logo-sub">Academy of Global Studies</span>
@@ -44,10 +44,12 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="programs.html">The Aurelius Offerings</a></li>
-    <li><a href="university.html">The Aurelius Way</a></li>
-    <li><a href="global-pathways.html">Global Destinations</a></li>
+    <li><a href="programs.html">Programmes</a></li>
+    <li><a href="#pathways">Pathways</a></li>
+    <li><a href="#student-life">Student Life</a></li>
+    <li><a href="#educators">Insights</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
   </ul>
   <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
     <span></span><span></span><span></span>
@@ -55,516 +57,171 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-pill"><span></span>Admissions Open 2026–27</div>
-      <h1 class="hero-title">Preparing Scholars<br/>for a <em>Global future</em></h1>
-      <p class="hero-sub">Strategic guidance for undergraduate university admissions, academic distinction, and global opportunities.</p>
-      <div class="hero-actions">
-        <a href="programs.html" class="btn btn-gold">The Aurelius Offerings</a>
-        <a href="#contact" class="btn btn-outline-white">Get in Touch</a>
-      </div>
-      <div class="hero-programs">
-        <a href="programs.html#sat" class="hero-program">
-          <span class="hero-program-icon"><i data-lucide="ruler"></i></span>
-          <span>SAT</span>
-        </a>
-        <a href="programs.html#ielts" class="hero-program">
-          <span class="hero-program-icon"><i data-lucide="messages-square"></i></span>
-          <span>IELTS</span>
-        </a>
-        <a href="programs.html#ap" class="hero-program">
-          <span class="hero-program-icon"><i data-lucide="library"></i></span>
-          <span>AP Exams</span>
-        </a>
-        <a href="programs.html#ipmat" class="hero-program">
-          <span class="hero-program-icon"><i data-lucide="book-open"></i></span>
-          <span>IPMAT</span>
-        </a>
-        <a href="university.html" class="hero-program">
-          <span class="hero-program-icon"><i data-lucide="star"></i></span>
-          <span>Profile Building</span>
-        </a>
-        <a href="university.html" class="hero-program">
-          <span class="hero-program-icon"><i data-lucide="compass"></i></span>
-          <span>Admissions Guidance</span>
-        </a>
-      </div>
+<section class="hx-hero">
+  <div class="hx-hero-copy">
+    <h1 class="hx-hero-title">
+      IIT or MIT.
+      <span class="accent">Your Aspiration.</span>
+      <span class="muted">Our Mentorship.</span>
+    </h1>
+    <p class="hx-hero-sub">Academic rigour. Personalised guidance.</p>
+    <div class="hero-actions">
+      <a href="#pathways" class="btn btn-gold">Begin Your Journey →</a>
     </div>
-    <!-- spacer so grid stays 2-column -->
-    <div aria-hidden="true"></div>
   </div>
-</section>
-
-<!-- 8 · FOUNDER — From the Founder's Desk. -->
-<section class="founder">
-  <div class="container">
-    <div class="founder-message" style="max-width: 800px; margin: 0 auto;">
-      <div class="section-header">
-        <span class="section-label">A Personal Note</span>
-        <h2 class="section-title">From the Founder's Desk.</h2>
-        <div class="section-divider"></div>
-      </div>
-      
-      <!-- Photo goes here when ready -->
-      
-      <blockquote class="founder-pullquote" style="text-align: center;">"We do not simply prepare students for examinations. We prepare them for the lives those examinations make possible."</blockquote>
-      <p>At Aurelius Academy of Global Studies, we believe education should extend far beyond examination success. We exist to cultivate intellectual curiosity, academic excellence, and the confidence to thrive in an increasingly interconnected world.</p>
-      <p>Too often, students receive information when what they truly need is thoughtful guidance. At Aurelius, we combine rigorous academic preparation with personalised mentorship, helping each student discover opportunities, make informed decisions, and pursue ambitious goals with clarity and purpose.</p>
-      <p>Whether a student’s aspirations lead to leading universities in India or across the world, our commitment remains the same: to provide the preparation, perspective, and support that transform potential into meaningful achievement.</p>
-      <p>We believe talent is universal, but opportunity is not. Through high standards, individual attention, and a global outlook, we strive to ensure that every deserving student has access to the guidance and opportunities needed to realise their full potential.</p>
-      <p>Every scholar’s journey is unique. We are honoured to be part of that journey.</p>
-      <div class="founder-sign" style="text-align: center; margin-top: 36px;">
-        <div class="founder-sign-name">Anil Nekkalapudi</div>
-        <div class="founder-sign-title">Founder &amp; Chief Vision Architect</div>
-        <div class="founder-sign-edu" style="font-size: 0.88rem; color: var(--text-mid); margin-top: 4px;">B.E. (Hons.), BITS Pilani</div>
-      </div>
+  <div class="hx-hero-media">
+    <div class="hx-hero-arch">
+      <img src="gallery/home/hero.jpg" alt="A student on campus, considering the road ahead" loading="eager"/>
     </div>
   </div>
 </section>
 
-<!-- 5 · PROGRAMS — Pathways Designed for Global Ambition. -->
-<section class="programs">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">What We Offer</span>
-      <h2 class="section-title white">The Aurelius Offerings</h2>
-      <div class="section-divider"></div>
-      <p class="section-desc">From academic enrichment and test mentorship to university admissions strategy, each pathway is thoughtfully designed around individual aspirations, measurable progress, and long-term success.</p>
+<!-- PATHWAYS -->
+<section class="hx-pathways" id="pathways">
+  <div class="hx-center fade-in">
+    <span class="hx-eyebrow">Our Pathways</span>
+    <h2 class="hx-h2">Pathways. Precisely Personalised.</h2>
+    <p class="hx-sub">No two aspirations are the same.</p>
+  </div>
+  <div class="hx-path-wrap">
+    <article class="hx-path-card is-advanced fade-in">
+      <div class="hx-path-figure"><img src="gallery/home/advanced.jpg" alt="Classical arched corridor" loading="lazy"/></div>
+      <div class="hx-path-body">
+        <h3 class="hx-path-name">Aurelius <span class="g">Advanced Scholars</span></h3>
+        <p class="hx-path-kicker">Indian Academic &amp; Competitive Pathways</p>
+        <div class="hx-tags">
+          <span class="hx-tag">JEE</span><span class="hx-tag">BITSAT</span><span class="hx-tag">EAPCET</span>
+          <span class="hx-tag">UGEE</span><span class="hx-tag">CMI</span><span class="hx-tag">ISI</span>
+          <span class="hx-tag">IAT</span><span class="hx-tag">NEST</span><span class="hx-tag">Olympiads</span>
+        </div>
+        <a href="programs.html" class="hx-link">Explore Advanced Scholars →</a>
+      </div>
+    </article>
+    <article class="hx-path-card is-global fade-in">
+      <div class="hx-path-body">
+        <h3 class="hx-path-name">Aurelius <span class="g">Global Scholars</span></h3>
+        <p class="hx-path-kicker">Indian &amp; International University Pathways</p>
+        <div class="hx-tags">
+          <span class="hx-tag">SAT</span><span class="hx-tag">AP</span><span class="hx-tag">IELTS</span>
+          <span class="hx-tag">University Admissions</span><span class="hx-tag">Global Pathways</span>
+        </div>
+        <a href="global-pathways.html" class="hx-link">Explore Global Scholars →</a>
+      </div>
+      <div class="hx-path-figure"><img src="gallery/home/global.jpg" alt="Classical university dome" loading="lazy"/></div>
+    </article>
+  </div>
+</section>
+
+<!-- MENTORSHIP -->
+<section class="hx-split reverse">
+  <div class="hx-split-copy fade-in">
+    <span class="hx-eyebrow">More Than Preparation</span>
+    <h2 class="hx-h2">Mentorship for<br/>What's Next.</h2>
+    <div class="hx-rule-sm"></div>
+    <p class="hx-tagline">Learn deeply. Think independently. Aim higher.</p>
+    <div class="hx-pillars">
+      <div class="hx-pillar"><div class="hx-pillar-ico"><i data-lucide="book-open"></i></div><h4>Stronger Foundations</h4></div>
+      <div class="hx-pillar"><div class="hx-pillar-ico"><i data-lucide="lightbulb"></i></div><h4>Independent Thinking</h4></div>
+      <div class="hx-pillar"><div class="hx-pillar-ico"><i data-lucide="globe"></i></div><h4>Wider Perspectives</h4></div>
+      <div class="hx-pillar"><div class="hx-pillar-ico"><i data-lucide="bar-chart-3"></i></div><h4>Future Readiness</h4></div>
     </div>
-    <div class="programs-grid">
-      <div class="program-card">
-        <div class="program-icon"><i data-lucide="ruler"></i></div>
-        <span class="program-tag">Test Prep</span>
-        <h3>SAT Mentorship</h3>
-        <p>Personalized guidance for achieving competitive SAT scores through concept mastery, strategy, and performance tracking.</p>
-        <div class="program-features">
-          <div class="program-feat">Reading &amp; Writing Mastery</div>
-          <div class="program-feat">Advanced Math Strategies</div>
-          <div class="program-feat">Full-Length Practice Tests</div>
-          <div class="program-feat">Personalized Score Tracking</div>
-        </div>
-        <a href="programs.html#sat" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card">
-        <div class="program-icon"><i data-lucide="messages-square"></i></div>
-        <span class="program-tag">Test Prep</span>
-        <h3>IELTS Mentorship</h3>
-        <p>Comprehensive mentorship across Listening, Reading, Writing, and Speaking for academic and professional success.</p>
-        <div class="program-features">
-          <div class="program-feat">Band 7+ Methodology</div>
-          <div class="program-feat">Speaking Labs &amp; Feedback</div>
-          <div class="program-feat">Academic &amp; General Modules</div>
-          <div class="program-feat">Weekly Assessments</div>
-        </div>
-        <a href="programs.html#ielts" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card">
-        <div class="program-icon"><i data-lucide="library"></i></div>
-        <span class="program-tag">Test Prep</span>
-        <h3>AP Exams Mentorship</h3>
-        <p>Advanced Placement pathways that strengthen university applications while building subject depth and academic confidence.</p>
-        <div class="program-features">
-          <div class="program-feat">STEM, Humanities &amp; Social Sciences</div>
-          <div class="program-feat">Subject-Specific Mentorship</div>
-          <div class="program-feat">Exam Strategy &amp; Practice</div>
-          <div class="program-feat">Credit-Oriented Preparation</div>
-        </div>
-        <a href="programs.html#ap" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card">
-        <div class="program-icon"><i data-lucide="book-open"></i></div>
-        <span class="program-tag">Test Prep</span>
-        <h3>IPMAT Mentorship</h3>
-        <p>Comprehensive preparation for Integrated Program in Management Aptitude Tests across leading IIMs and premier management institutions.</p>
-        <div class="program-features">
-          <div class="program-feat">Quantitative Ability</div>
-          <div class="program-feat">Logical Reasoning</div>
-          <div class="program-feat">Verbal Ability</div>
-          <div class="program-feat">Personal Interview Prep</div>
-        </div>
-        <a href="programs.html#ipmat" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card wide">
-        <div class="program-card-main">
-          <div class="program-icon"><i data-lucide="graduation-cap"></i></div>
-          <span class="program-tag">Admissions</span>
-          <h3>University Admissions Guidance</h3>
-          <p>Strategic guidance through every step of the admissions journey to leading universities in the US, UK, Canada, Europe, Singapore, Australia, and India.</p>
-        </div>
-        <div class="program-features">
-          <div class="program-feat">University Selection</div>
-          <div class="program-feat">Application Strategy</div>
-          <div class="program-feat">Essays &amp; Personal Statements</div>
-          <div class="program-feat">Recommendation Strategy</div>
-          <div class="program-feat">Financial Aid Guidance</div>
-          <div class="program-feat">Post-Offer Support</div>
-          <div class="program-feat">Interview Preparation</div>
-          <a href="university.html" class="program-link" style="margin-top: 12px;">Learn More →</a>
-        </div>
-      </div>
+  </div>
+  <div class="hx-split-media fade-in"><img src="gallery/home/mentor.jpg" alt="A student in thought" loading="lazy"/></div>
+</section>
+
+<!-- BEYOND THE EXAMINATION -->
+<section class="hx-band hx-band--exam">
+  <div class="hx-band-bg"><img src="gallery/home/exam.jpg" alt="" aria-hidden="true" loading="lazy"/></div>
+  <div class="hx-band-inner fade-in">
+    <span class="hx-eyebrow on-dark">The Aurelius Approach</span>
+    <h2>Beyond<br/>the Examination.</h2>
+    <p>Because excellence is not a score. It is a way of thinking.</p>
+  </div>
+</section>
+
+<!-- EDUCATORS -->
+<section class="hx-split" id="educators">
+  <div class="hx-split-media fade-in"><img src="gallery/home/educator.jpg" alt="An Aurelius educator teaching" loading="lazy"/></div>
+  <div class="hx-split-copy fade-in">
+    <span class="hx-eyebrow">Our Educators</span>
+    <h2 class="hx-h2">Educators.<br/>Exceptionally Accomplished.</h2>
+    <div class="hx-rule-sm"></div>
+    <p class="hx-lead">Expertise that challenges. Mentorship that inspires.</p>
+    <div class="hero-actions" style="margin-top:28px">
+      <a href="about.html" class="btn btn-gold">Meet Our Educators →</a>
     </div>
   </div>
 </section>
 
-<!-- 4 · HOLISTIC DEVELOPMENT — Beyond the Bell Curve. -->
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Holistic Development</span>
-      <h2 class="section-title">Beyond the Bell Curve.</h2>
-      <div class="section-divider"></div>
-      <p class="section-desc">Leading universities look past marks for the qualities that define a scholar. We develop the character, curiosity, and confidence that set students apart.</p>
+<!-- STUDENT EXPERIENCE -->
+<section class="hx-split reverse" id="student-life">
+  <div class="hx-split-copy fade-in">
+    <span class="hx-eyebrow">Student Experience</span>
+    <h2 class="hx-h2">A Place to Learn.<br/>A Community to Belong.</h2>
+    <div class="hx-mini">
+      <div class="hx-mini-item"><div class="hx-pillar-ico"><i data-lucide="graduation-cap"></i></div><span>Learn</span></div>
+      <div class="hx-mini-item"><div class="hx-pillar-ico"><i data-lucide="help-circle"></i></div><span>Question</span></div>
+      <div class="hx-mini-item"><div class="hx-pillar-ico"><i data-lucide="users"></i></div><span>Connect</span></div>
+      <div class="hx-mini-item"><div class="hx-pillar-ico"><i data-lucide="heart"></i></div><span>Belong</span></div>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="compass"></i></div>
-        <h3>Character &amp; Reflection</h3>
-        <p>Inspired by timeless principles of discipline, reflection, and purpose, we help students develop resilience, integrity, and self-awareness that endure long after admissions decisions are made.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="flag"></i></div>
-        <h3>Leadership &amp; Initiative</h3>
-        <p>Students learn to lead with purpose, take ownership of meaningful projects, and create impact within their communities and beyond.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="messages-square"></i></div>
-        <h3>Communication &amp; Debate</h3>
-        <p>Through debate, public speaking, and analytical writing, students learn to communicate ideas with confidence, precision, and influence.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="microscope"></i></div>
-        <h3>Research &amp; Inquiry</h3>
-        <p>Independent research encourages students to ask meaningful questions, evaluate evidence critically, and pursue knowledge with intellectual rigor and curiosity.</p>
-      </div>
+    <div class="hero-actions" style="margin-top:30px">
+      <a href="about.html" class="btn btn-gold">Discover Student Life →</a>
     </div>
-    <div class="services-closing">
-      <h3>Intellectual Growth. Global Readiness.</h3>
-      <p>Academic excellence is only one part of a compelling student profile. Leadership, communication, research, and character development create the foundation for success at the world's leading universities.</p>
-    </div>
+  </div>
+  <div class="hx-split-media fade-in"><img src="gallery/home/student.jpg" alt="Aurelius students together" loading="lazy"/></div>
+</section>
+
+<!-- PEOPLE. PERSPECTIVES. PATHWAYS. -->
+<section class="hx-band hx-band--ppp">
+  <div class="hx-band-bg"><img src="gallery/home/ppp.jpg" alt="" aria-hidden="true" loading="lazy"/></div>
+  <div class="hx-band-inner fade-in">
+    <div class="hx-rule"></div>
+    <h2>People. Perspectives. Pathways.</h2>
   </div>
 </section>
 
-<!-- 2 · GLOBAL OUTLOOK — The World Has Never Been Closer. -->
-<section class="global-outlook">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">A Global Outlook</span>
-      <h2 class="section-title white">The World Has<br/>Never Been Closer.</h2>
-      <div class="section-divider"></div>
-      <p class="section-subtitle white">Geography no longer defines ambition.</p>
-      <p class="section-desc" style="color:rgba(255,255,255,0.72)">Today's students can learn, compete, and gain admission across continents while remaining rooted in their local communities.</p>
-    </div>
-    <div class="outlook-grid">
-      <div class="outlook-card">
-        <div class="outlook-icon"><i data-lucide="compass"></i></div>
-        <h3>Opportunities<br/>Beyond Borders</h3>
-        <p>From research programs and summer schools to university admissions, students can now access opportunities that were once limited by geography.</p>
-      </div>
-      <div class="outlook-card">
-        <div class="outlook-icon"><i data-lucide="award"></i></div>
-        <h3>Globally<br/>Recognized Credentials</h3>
-        <p>SAT, IELTS, and AP Exams create pathways to leading universities across the USA, UK, Canada, Singapore, Europe, and beyond.</p>
-      </div>
-      <div class="outlook-card">
-        <div class="outlook-icon"><i data-lucide="globe"></i></div>
-        <h3>A Connected<br/>World</h3>
-        <p>Virtual tours, online interviews, and global collaboration have transformed international education from a distant aspiration into an accessible reality.</p>
-      </div>
-      <div class="outlook-card">
-        <div class="outlook-icon"><i data-lucide="map-pin"></i></div>
-        <h3>Pathways Across<br/>Continents</h3>
-        <p>Whether pursuing opportunities in India or abroad, students benefit from a structured strategy tailored to their goals, strengths, and aspirations.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 3 · ADVISORY PROCESS — Finding the Right Fit. -->
-<section class="admissions-process">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Our Advisory Approach</span>
-      <h2 class="section-title">Finding the Right Fit.</h2>
-      <div class="section-divider"></div>
-      <p class="section-desc">Every student brings a unique combination of strengths, aspirations, and potential. Our advisory process is designed to identify the universities, programs, and pathways where each scholar can thrive academically and personally.</p>
-    </div>
-    <div class="process-steps">
-      <div class="process-step">
-        <h3>Discover</h3>
-        <p>We begin with a comprehensive understanding of the student's academic profile, interests, aspirations, and long-term goals.</p>
-      </div>
-      <div class="process-step">
-        <h3>Shortlist</h3>
-        <p>We develop a carefully balanced university list that aligns ambition with opportunity, combining aspirational, matched, and secure options.</p>
-      </div>
-      <div class="process-step">
-        <h3>Prepare</h3>
-        <p>From standardized tests and academic enrichment to essays and profile development, every element is strategically aligned with the expectations of target universities.</p>
-      </div>
-      <div class="process-step">
-        <h3>Apply</h3>
-        <p>We provide end-to-end guidance through applications, interviews, deadlines, and decision-making, ensuring every submission reflects the student's strongest potential.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7 · GLOBAL PATHWAYS — Opportunities Across Continents. -->
-<section class="pathways-preview">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Global Pathways</span>
-      <h2 class="section-title white">Opportunities<br/>Across Continents.</h2>
-      <div class="section-divider"></div>
-      <p class="section-desc" style="color:rgba(255,255,255,0.72)">Our experts help you discover the right opportunities, build a compelling profile, and pursue your academic ambitions with confidence.</p>
-    </div>
-    <div class="pathways-grid">
-      <div class="pathway-card">
-        <div class="pathway-region"><i data-lucide="globe"></i> Americas</div>
-        <h3><i data-lucide="map"></i> United States &amp; Canada</h3>
-        <p style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px; line-height: 1.3;">North America’s Leading Universities</p>
-        <p>Explore research universities, liberal arts colleges, and Ivy League institutions across the United States and Canada.</p>
-        <div class="pathway-unis">
-          <span class="pathway-uni-tag">Harvard</span>
-          <span class="pathway-uni-tag">MIT</span>
-          <span class="pathway-uni-tag">Stanford</span>
-          <span class="pathway-uni-tag">Columbia</span>
-          <span class="pathway-uni-tag">UBC</span>
-          <span class="pathway-uni-tag">U of Toronto</span>
-        </div>
-        <a href="global-pathways.html#americas" class="pathway-link">Explore Americas →</a>
-      </div>
-      <div class="pathway-card">
-        <div class="pathway-region"><i data-lucide="globe"></i> Europe</div>
-        <h3><i data-lucide="landmark"></i> United Kingdom &amp; Europe</h3>
-        <p style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px; line-height: 1.3;">Historic Excellence. Global Influence.</p>
-        <p>Admissions guidance for Oxford, Cambridge, Imperial, LSE, ETH Zurich, TU Munich, and other leading European universities.</p>
-        <div class="pathway-unis">
-          <span class="pathway-uni-tag">Oxford</span>
-          <span class="pathway-uni-tag">Cambridge</span>
-          <span class="pathway-uni-tag">Imperial</span>
-          <span class="pathway-uni-tag">LSE</span>
-          <span class="pathway-uni-tag">ETH Zurich</span>
-          <span class="pathway-uni-tag">TU Munich</span>
-        </div>
-        <a href="global-pathways.html#europe" class="pathway-link">Explore Europe →</a>
-      </div>
-      <div class="pathway-card">
-        <div class="pathway-region"><i data-lucide="globe"></i> Asia-Pacific</div>
-        <h3><i data-lucide="globe-2"></i> Asia-Pacific</h3>
-        <p style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px; line-height: 1.3;">Innovation Across the East</p>
-        <p>Strategic pathways to world-class universities in Singapore, Hong Kong, Japan, Australia, and New Zealand.</p>
-        <div class="pathway-unis">
-          <span class="pathway-uni-tag">NUS</span>
-          <span class="pathway-uni-tag">NTU</span>
-          <span class="pathway-uni-tag">HKU</span>
-          <span class="pathway-uni-tag">Melbourne</span>
-          <span class="pathway-uni-tag">ANU</span>
-          <span class="pathway-uni-tag">Waseda</span>
-        </div>
-        <a href="global-pathways.html#asia" class="pathway-link">Explore Asia-Pacific →</a>
-      </div>
-      <div class="pathway-card">
-        <div class="pathway-region"><i data-lucide="globe"></i> India</div>
-        <h3><i data-lucide="graduation-cap"></i> Indian Universities</h3>
-        <p style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px; line-height: 1.3;">Global Standards. Indian Opportunities.</p>
-        <p>Several leading Indian universities accept SAT and IPMAT scores for undergraduate admissions, providing internationally aligned pathways within India.</p>
-        <div class="pathway-unis">
-          <span class="pathway-uni-tag">IIMs</span>
-          <span class="pathway-uni-tag">Ashoka</span>
-          <span class="pathway-uni-tag">Plaksha</span>
-          <span class="pathway-uni-tag">Krea</span>
-          <span class="pathway-uni-tag">FLAME</span>
-          <span class="pathway-uni-tag">Shiv Nadar</span>
-          <span class="pathway-uni-tag">Ahmedabad</span>
-        </div>
-        <a href="programs.html" class="pathway-link">Explore India →</a>
-      </div>
-    </div>
-    <div class="pathways-closing">
-      <h3>Global Guidance. Personalised for You.</h3>
-      <p>Our experts help you discover the right opportunities, build a compelling profile, and pursue your academic ambitions with confidence.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ADMISSIONS CTA -->
-<section class="admissions-cta">
-  <div class="container">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <span class="cta-label">Applications Open</span>
-        <h2>The Aurelius<br/>Offerings 2026–27</h2>
-        <p>For ambitious students preparing for admissions to undergraduate programs in the world’s leading universities through structured mentorship, academic enrichment, and global offerings.</p>
-        <div class="cta-badges" style="margin-top:16px">
-          <span class="cta-badge">Selective Cohorts</span>
-          <span class="cta-badge">Expert Mentorship</span>
-          <span class="cta-badge">Global Admissions</span>
-        </div>
-      </div>
-      <div class="cta-actions">
-        <a href="#contact" class="btn btn-navy">Enquire Now →</a>
-        <a href="programs.html" class="btn btn-outline-gold">Explore Offerings</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 9 · CONTACT — A World of Possibilities Awaits. -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-header left">
-          <span class="section-label">Contact Us</span>
-          <h2 class="section-title">A World of<br/>Possibilities Await.</h2>
-          <div class="section-divider"></div>
-        </div>
-        <p>Get in touch to learn more, schedule a consultation, or register for the upcoming programs.</p>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
-            <div class="contact-detail-text">
-              <h3>Visit Us</h3>
-              <p>1st Floor, Ganesham Square, Road No. 7,<br/>Kakatiya Hills, Madhapur, Hyderabad 500081</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
-            <div class="contact-detail-text">
-              <h3>Call Us</h3>
-              <a href="tel:+919121473399">+91 91214 73399</a>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="mail"></i></div>
-            <div class="contact-detail-text">
-              <h3>Email Us</h3>
-              <a href="mailto:info@aureliusacademy.in">info@aureliusacademy.in</a>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><i data-lucide="globe"></i></div>
-            <div class="contact-detail-text">
-              <h3>Website</h3>
-              <a href="http://www.aureliusacademy.in">www.aureliusacademy.in</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <form class="contact-form" id="enquiryForm" action="mailto:info@aureliusacademy.in" method="post" enctype="text/plain">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="First Name" placeholder="Your first name" autocomplete="given-name" required/>
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="Last Name" placeholder="Your last name" autocomplete="family-name"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" placeholder="your@email.com" autocomplete="email" required/>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="Phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="program">Program of Interest</label>
-          <select id="program" name="Program of Interest">
-            <option value="">Select a program</option>
-            <option>SAT</option>
-            <option>IELTS</option>
-            <option>AP Exams</option>
-            <option>Profile Building</option>
-            <option>Admissions Guidance</option>
-            <option>Management Pathways</option>
-            <option>University Admissions</option>
-            <option>Global Pathways</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="Message" placeholder="Tell us about your goals and any questions you have..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send Enquiry</button>
-        <p style="font-size:0.78rem;color:var(--text-mid);margin-top:14px;text-align:center">This opens your email app with the enquiry ready to send. Prefer to talk? Call <a href="tel:+919121473399" style="color:var(--gold);font-weight:600">+91 91214 73399</a>.</p>
-      </form>
+<!-- FINAL CTA -->
+<section class="hx-cta" id="contact">
+  <div class="fade-in">
+    <h2>Your Next Step Starts Here.</h2>
+    <p>Tell us where you want to go. We'll help you find the path.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="https://wa.me/919121473399?text=Hello%20Aurelius%20Academy,%20I%20am%20interested%20in%20learning%20more%20about%20your%20programmes." target="_blank" rel="noopener" class="btn btn-gold">Enquire Now →</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="gap:12px;margin-bottom:12px">
-          <img class="nav-logo-icon" src="logo-icon-light.png" alt="Aurelius" style="height: 36px;"/>
-          <div class="nav-logo-text">
-            <span class="nav-logo-name">Aurelius</span>
-            <span class="nav-logo-sub">Academy of Global Studies</span>
-          </div>
-        </a>
-        <p>A comprehensive pathway to leading universities, academic distinction, and future leadership opportunities. Rooted in Hyderabad, reaching the world.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13-.67-.66-1.34-1.08-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
-          <a href="#" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6 4.39 10.97 10.13 11.87v-8.4H7.08v-3.47h3.05V9.43c0-3 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.52c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.4C19.61 23.04 24 18.07 24 12.07z"/></svg></a>
-          <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="#" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+<footer class="hx-footer">
+  <div class="hx-footer-top">
+    <div class="hx-footer-brand">
+      <a href="index.html" class="nav-logo" style="gap:12px">
+        <img class="nav-logo-icon" src="logo-icon-light.png" alt="Aurelius" style="height:36px"/>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Aurelius</span>
+          <span class="nav-logo-sub">Academy of Global Studies</span>
         </div>
-      </div>
-      <div class="footer-col">
-        <h3>Offerings</h3>
-        <ul>
-          <li><a href="programs.html#sat">SAT</a></li>
-          <li><a href="programs.html#ielts">IELTS</a></li>
-          <li><a href="programs.html#ap">AP Exams</a></li>
-          <li><a href="programs.html#ipmat">IPMAT</a></li>
-
-          <li><a href="programs.html#english">Profile Building</a></li>
-          <li><a href="programs.html#enrichment">Admissions Guidance</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="university.html">The Aurelius Way</a></li>
-          <li><a href="global-pathways.html">Global Destinations</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <div class="footer-contact-item">
-          <span class="footer-contact-icon"><i data-lucide="map-pin"></i></span>
-          <p>1st Floor, Ganesham Square, Road No. 7, Kakatiya Hills, Madhapur, Hyderabad 500081</p>
-        </div>
-        <div class="footer-contact-item">
-          <span class="footer-contact-icon"><i data-lucide="phone"></i></span>
-          <a href="tel:+919121473399">+91 91214 73399</a>
-        </div>
-        <div class="footer-contact-item">
-          <span class="footer-contact-icon"><i data-lucide="mail"></i></span>
-          <a href="mailto:info@aureliusacademy.in">info@aureliusacademy.in</a>
-        </div>
-      </div>
+      </a>
+      <p>A comprehensive pathway to leading universities, academic distinction, and future leadership. Rooted in Hyderabad, reaching the world.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Aurelius Academy of Global Studies. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-      </div>
+    <nav class="hx-footer-nav" aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="programs.html">Programmes</a>
+      <a href="#pathways">Pathways</a>
+      <a href="#student-life">Student Life</a>
+      <a href="#educators">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hx-footer-contact">
+      <div class="row"><i data-lucide="phone"></i><a href="tel:+919121473399">+91 91214 73399</a></div>
+      <div class="row"><i data-lucide="mail"></i><a href="mailto:info@aureliusacademy.in">info@aureliusacademy.in</a></div>
+      <div class="row"><i data-lucide="globe"></i><a href="http://www.aureliusacademy.in">www.aureliusacademy.in</a></div>
+      <div class="row"><i data-lucide="map-pin"></i><span>First Floor, Ganesham Square, Road No. 7,<br/>Kakatiya Hills, Madhapur, Hyderabad 500081</span></div>
     </div>
+  </div>
+  <div class="hx-footer-bottom">
+    <p>© 2026 Aurelius Academy of Global Studies. All rights reserved.</p>
+    <span class="tag">People. Perspectives. Pathways.</span>
   </div>
 </footer>
 
