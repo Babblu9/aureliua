@@ -1024,3 +1024,23 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
   .acad-items, .acad-items.six { grid-template-columns:repeat(2,1fr); }
   .acad-section { padding:64px 0; }
 }
+
+/* ── ACADEMICS: approach + beyond-coaching ─────── */
+.acad-approach { padding:90px 40px; background:var(--white); text-align:center; }
+.acad-approach .inner { max-width:var(--max); margin:0 auto; }
+.acad-approach .acad-kicker { display:block; font-family:var(--font-serif); font-weight:600; letter-spacing:0.06em; color:var(--navy); font-size:clamp(1rem,1.6vw,1.3rem); text-transform:uppercase; }
+.acad-approach h2 { font-family:var(--font-serif); font-weight:600; color:var(--gold); font-size:clamp(2.6rem,6vw,4.6rem); line-height:1; letter-spacing:0.01em; }
+.acad-approach .subhead { font-family:var(--font-serif); font-weight:600; color:var(--navy); font-size:clamp(1.4rem,2.4vw,1.9rem); margin-top:20px; }
+.acad-approach .lead { max-width:62ch; margin:16px auto 0; color:var(--text-mid); line-height:1.8; }
+.acad-cultivate { font-size:0.82rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin:44px 0 30px; position:relative; }
+.acad-cultivate::before, .acad-cultivate::after { content:''; position:absolute; top:50%; width:20%; height:1px; background:var(--gold); opacity:0.5; }
+.acad-cultivate::before { left:8%; } .acad-cultivate::after { right:8%; }
+.acad-items.center { max-width:940px; margin:0 auto; }
+.acad-items.center .acad-item { text-align:center; }
+.acad-items.center .acad-item-ico { display:flex; justify-content:center; }
+.acad-items.center .acad-item h4 { letter-spacing:0.06em; }
+.acad-items.three { grid-template-columns:repeat(3,1fr); }
+@media (max-width:900px){
+  .acad-items.center, .acad-items.three { grid-template-columns:repeat(2,1fr); }
+  .acad-approach { padding:64px 28px; }
+}
