@@ -140,19 +140,27 @@ document.addEventListener('DOMContentLoaded', () => {
         <input type="tel" id="popupPhone" name="Phone" placeholder="+91 XXXXX XXXXX"/>
       </div>
       <div class="form-group">
-        <label for="popupProgram">Program of Interest</label>
-        <select id="popupProgram" name="Program of Interest">
-          <option value="">Select a program</option>
-          <option>SAT</option>
-          <option>IELTS</option>
-          <option>AP Exams</option>
-          <option>IPMAT</option>
-
-          <option>Profile Building</option>
-          <option>Admissions Guidance</option>
-          <option>Management Pathways</option>
-          <option>University Admissions</option>
-          <option>Global Pathways</option>
+        <label for="popupProgram">Course of Interest</label>
+        <select id="popupProgram" name="Course of Interest">
+          <option value="">Select a course</option>
+          <optgroup label="Advance Scholars — Indian Competitive">
+            <option>JEE Main</option>
+            <option>JEE Advanced</option>
+            <option>BITSAT</option>
+            <option>EAPCET</option>
+            <option>UGEE</option>
+            <option>CMI</option>
+            <option>ISI</option>
+            <option>IAT</option>
+            <option>NEST</option>
+            <option>Olympiads</option>
+          </optgroup>
+          <optgroup label="Global Scholars — International">
+            <option>SAT</option>
+            <option>IELTS</option>
+            <option>AP Exams</option>
+          </optgroup>
+          <option>Other / General Enquiry</option>
         </select>
       </div>
       <div class="form-group">
