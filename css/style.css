@@ -1141,3 +1141,14 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
   .ausat-media { order:-1; aspect-ratio:16/10; border-radius:16px; }
   .ausat-detail { padding:64px 0; }
 }
+
+/* ── PATHWAYS: track poster image ──────────────── */
+.path-top { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,4vw,56px); align-items:center; margin-bottom:20px; }
+.path-track.is-global .path-top { grid-template-columns:1.15fr 0.85fr; }
+.path-media { border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); }
+.path-media img { width:100%; display:block; }
+@media (max-width:820px){
+  .path-top, .path-track.is-global .path-top { grid-template-columns:1fr; gap:28px; }
+  .path-media { max-width:420px; }
+  .path-track.is-global .path-media { order:-1; }
+}
