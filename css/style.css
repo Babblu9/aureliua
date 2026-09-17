@@ -1152,3 +1152,21 @@ footer { background: var(--navy-dark); padding: 80px 0 0; }
   .path-media { max-width:420px; }
   .path-track.is-global .path-media { order:-1; }
 }
+
+/* ── CONTACT PAGE ──────────────────────────────── */
+.contact-hero { background:var(--cream); padding:150px 40px 60px; text-align:center; }
+.contact-hero > div { max-width:760px; margin:0 auto; }
+.contact-hero .hx-eyebrow { color:var(--gold); }
+.contact-hero h1 { font-family:var(--font-serif); font-weight:600; color:var(--navy); font-size:clamp(2.4rem,4.8vw,3.6rem); line-height:1.08; }
+.contact-hero p { font-size:1.08rem; color:var(--text-mid); line-height:1.8; margin-top:18px; }
+.contact-wrap { max-width:var(--max); margin:0 auto; padding:80px 40px; }
+.contact-hours { display:flex; flex-direction:column; gap:6px; margin-top:6px; }
+.contact-hours div { display:flex; justify-content:space-between; gap:20px; font-size:0.875rem; color:var(--text-mid); max-width:280px; }
+.contact-hours div span:last-child { color:var(--navy); font-weight:600; }
+.contact-socials { display:flex; gap:10px; margin-top:8px; }
+.contact-socials a { width:40px; height:40px; border:1px solid var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--navy); transition:all var(--ease); }
+.contact-socials a:hover { background:var(--gold); color:#fff; border-color:var(--gold); }
+.contact-socials svg { width:18px; height:18px; }
+.contact-map { width:100%; }
+.contact-map iframe { width:100%; height:460px; border:0; display:block; }
+@media (max-width:768px){ .contact-map iframe { height:340px; } .contact-wrap { padding:56px 28px; } }
